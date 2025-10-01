@@ -1,0 +1,7 @@
+streamlit run app.py
+
+Forceer een harde refresh in je browser
+
+Windows: Ctrl + Shift + R
+
+na update van je script om de layout aan te passen aan nieuwe omgeving
