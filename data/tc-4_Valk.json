@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "Naam": "Lijstweergave",
+    "Datum": "3/8/2022",
+    "Paginas": [
+      "Lijstweergave",
+      "inplannen (gepubliceerd)",
+      "ziekte & verlof",
+      "persoonlijke kalender",
+      "beschikbaarheid",
+      "ziekte melding bewerken",
+      "ziekte en verlof (medewerker)",
+      "niet beschikbare tijd bewerken",
+      "verlof goed -of afkeuren"
+    ],
+    "Precondities": "Medewerker met verlof, medewerker niet beschikbaar, medewerker met voorkeur, medewerker ziekgemeld",
+    "Accounts": [
+      "VM/Manager",
+      "Medewerker met verlof",
+      "Ziekgemelde medewerker",
+      "Medewerker met voorkeur",
+      "Niet beschikbare medewerker"
+    ],
+    "Omgevingen": [
+      "Manageromgeving",
+      "Medewerkeromgeving"
+    ]
+  },
+  "testcases": [
+    {
+      "id": "TC_4.1",
+      "title": "Dienst toewijzen",
+      "steps": [
+        {"step": 1, "actie": "Klik op 'Lijstweergave' in de navigatiebalk onder het kopje Inplannen.", "gewenst_resultaat": "De pagina 'Lijstweergave' wordt geopend."},
+        {"step": 2, "actie": "Klik binnen het kalenderoverzicht op het plusje bij een datum.", "gewenst_resultaat": "De pop-up 'Dienst toewijzen' wordt geopend."},
+        {"step": 3, "actie": "Klik op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten."},
+        {"step": 4, "actie": "Selecteer een willekeurige dienst en klik daarna op 'Opslaan'.", "gewenst_resultaat": "De dienst wordt opgeslagen en weergeven in het lijstoverzicht kalender."},
+        {"step": 5, "actie": "Navigeer naar 'Diensten/Openstaand' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst. En klik op een beschikbare dienst om je aan te melden.", "gewenst_resultaat": "De dienst met de afdeling, diensttijd en collega's wordt geopend."},
+        {"step": 6, "actie": "Klik op 'Aanmelden', voeg daarna een opmerking toe en klik nogmaals op 'Aanmelden'.", "gewenst_resultaat": "De medewerker is aangemeld aan de dienst."},
+        {"step": 7, "actie": "Ga naar de pagina 'Lijstweergave' en zoek de dienst waarvan de medewerker zich zojuist voor heeft aangemeld.", "gewenst_resultaat": "De dienst wordt wit weergeven met de melding dat de medewerker zich voor de dienst heeft aangemeld."},
+        {"step": 8, "actie": "Klik op de dienst en klik vervolgens op 'Toevoegen' bij de medewerker zijn naam.", "gewenst_resultaat": "De medewerker is toegevoegd aan de dienst."},
+        {"step": 9, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld bij de dienst.", "gewenst_resultaat": "De dienst waarop is aangemeld wordt weergeven met de status Gepland."},
+        {"step": 10, "actie": "Ga naar de kalenderoverzicht van de pagina 'Inplannen' en controleer of de zojuist toegevoegde medewerkers aan de diensten correct worden weergeven.", "gewenst_resultaat": "De diensten worden correct weergegeven in het kalenderoverzicht (inplannen)."},
+        {"step": 11, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven."},
+        {"step": 12, "actie": "Klik op de zojuist toegevoegde medewerker. Klik de kalender en controleer of de dienst is toegevoegd aan de persoonlijke kalender.", "gewenst_resultaat": "De dienst wordt weergegeven in de persoonlijke kalender."}
+      ]
+    },
+    {
+      "id": "TC_4.2",
+      "title": "Dienst toewijzen medewerker met verlof",
+      "steps": [
+        {"step": 1, "actie": "Klik op een dienst in de lijstweergavekalender en voeg een medewerker met verlof toe aan de dienst. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "De dienst wordt weergeven als verlof bij de medewerker."},
+        {"step": 2, "actie": "Ga naar de kalenderoverzicht van de pagina 'Inplannen' en controleer of de zojuist toegevoegde medewerkers aan de diensten correct worden weergeven (Medewerker met verlof)", "gewenst_resultaat": "De dienst wordt in het kalenderoverzicht van de pagina inplannen weergeven."},
+        {"step": 3, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven"},
+        {"step": 4, "actie": "Klik op de zojuist toegevoegde medewerker met verlof. Klik de kalender en controleer of de dienst is toegevoegd aan de persoonlijke kalender.", "gewenst_resultaat": "De dienst wordt in de persoonlijke kalenderoverzicht weergegeven."},
+        {"step": 5, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker correct is aangemeld bij de dienst.", "gewenst_resultaat": "De dienst wordt in het dienstoverzicht weergegeven."}
+      ]
+    },
+    {
+      "id": "TC_4.3",
+      "title": "Dienst toewijzen ziekgemelde medewerker",
+      "steps": [
+        {"step": 1, "actie": "Klik op een dienst in de lijstweergavekalender en voeg een medewerker die zich ziek heeft gemeld aan de dienst. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "De dienst wordt weergeven als ziekgemeld bij de medewerker."},
+        {"step": 2, "actie": "Ga naar de kalenderoverzicht van de pagina 'Inplannen' en controleer of de zojuist toegevoegde medewerkers aan de diensten correct worden weergeven (Medewerker ziekgemeld).", "gewenst_resultaat": "De dienst wordt in het kalenderoverzicht van de pagina inplannen weergeven."},
+        {"step": 3, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven"},
+        {"step": 4, "actie": "Klik op de zojuist toegevoegde ziekgemelde medewerker. Klik de kalender en controleer of de dienst is toegevoegd aan de persoonlijke kalender.", "gewenst_resultaat": "De dienst wordt in de persoonlijke kalenderoverzicht weergegeven."},
+        {"step": 5, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker correct is aangemeld bij de dienst.", "gewenst_resultaat": "De dienst wordt in het dienstoverzicht weergegeven."}
+      ]
+    },
+    {
+      "id": "TC_4.4",
+      "title": "Dienst toewijzen medewerker met voorkeur",
+      "steps": [
+        {"step": 1, "actie": "Ga naar 'Lijstweergave' en klik op een dienst in de lijstweergavekalender en voeg een medewerker met voorkeur toe aan de dienst. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "De dienst wordt weergeven als voorkeur bij de medewerker."},
+        {"step": 2, "actie": "Ga naar de kalenderoverzicht van de pagina 'Inplannen' en controleer of de zojuist toegevoegde medewerkers aan de diensten correct worden weergeven (Medewerker met voorkeur).", "gewenst_resultaat": "De dienst wordt in het kalenderoverzicht van de pagina inplannen weergeven."},
+        {"step": 3, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven"},
+        {"step": 4, "actie": "Klik op de zojuist toegevoegde medewerker met voorkeur. Klik de kalender en controleer of de dienst is toegevoegd aan de persoonlijke kalender.", "gewenst_resultaat": "De dienst wordt in de persoonlijke kalenderoverzicht weergegeven."},
+        {"step": 5, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker correct is aangemeld bij de dienst.", "gewenst_resultaat": "De dienst wordt in het dienstoverzicht weergegeven."}
+      ]
+    },
+    {
+      "id": "TC_4.5",
+      "title": "Geplande dienst bewerken (lijstweergave)",
+      "steps": [
+        {"step": 1, "actie": "Ga naar 'Lijstweergave' en klik op een aangemaakte (groene) dienst.", "gewenst_resultaat": "De pagina 'Dienst bewerken' wordt geopend."},
+        {"step": 2, "actie": "Wijzig de starttijd eindtijd en klik op 'Opslaan'.", "gewenst_resultaat": "De gewijzigde starttijd eindtijd wordt weergegeven in het (lijst) kalenderoverzicht"},
+        {"step": 3, "actie": "Verander het aantal pers. En klik op 'Opslaan'.", "gewenst_resultaat": "De dienst wordt gewijzigd weergegeven in het lijstweergaveoverzicht."},
+        {"step": 4, "actie": "Verwijder de medewerker die aan de dienst is gekoppeld door op het prullebakje te klikken naast de gebruikersnaam.", "gewenst_resultaat": "De medewerker wordt verwijderd uit de dienst."},
+        {"step": 5, "actie": "Voeg een willekeurige medewerker toe aan de dienst door op medewerkers te klikken en vervolgens een naam te klikken.", "gewenst_resultaat": "De medewerker wordt toegevoegd aan de dienst en zijn naam wordt weergegeven."},
+        // ...volgende stappen zoals hierboven beschreven...
+      ]
+    }
+    // Je kunt de rest van de testcases aanvullen volgens deze structuur.
+  ]
+}
+

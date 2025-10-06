@@ -1,0 +1,654 @@
+{
+  "metadata": {
+    "naam": "Verlof en ziekte",
+    "datum": "4/3/2022",
+    "paginas": "verlof-en-ziekte, verlof-aanvragen, verlofkalender, ziekmeldingen, verzuimrapportage",
+    "accounts": "VM/Manager, Medewerker",
+    "omgevingen": "Manageromgeving, Medewerkersomgeving"
+  },
+  "testcases": [
+    {
+      "id": "TC_12.1",
+      "title": "Verlof aanvragen (via medewerker)",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Open het hamburger menu rechtsboven (de dre horizontale streepjes).",
+          "gewenst_resultaat": "Een dropdownlist wordt geopend met allerlei keuzes van pagina's."
+        },
+        {
+          "step": "2",
+          "actie": "Klik op 'Ziekte en verlof'.",
+          "gewenst_resultaat": "De pagina 'ziekte-en-verlof/verlofaanvragen' wordt geopend."
+        },
+        {
+          "step": "3",
+          "actie": "Klik op de plus knop rechtsonderin de pagina.",
+          "gewenst_resultaat": "De pagina 'verlof-aanvragen' wordt geopend."
+        },
+        {
+          "step": "4",
+          "actie": "Klik op de knop 'aanvragen'.",
+          "gewenst_resultaat": "Er gebeurt niks, er kan niet geklikt worden op de knop 'Aanvragen'."
+        },
+        {
+          "step": "5",
+          "actie": "Voer een einddatum die eerder is dan de begindatum en klik op de knop 'Aanvragen'.",
+          "gewenst_resultaat": "De textbox van de einddatum wordt rood en er gebeurt niks na het klikken van de knop 'Aanvragen'."
+        },
+        {
+          "step": "6",
+          "actie": "Voer een einddatum in die later is dan de begindatum en klik op de knop 'Aanvragen'.",
+          "gewenst_resultaat": "De pagina 'verlofaanvragen' wordt geopend en de zojuist aangemaakte aanvraag heeft de status 'In behandeling'."
+        },
+        {
+          "step": "7",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlof-aanvragen' en controleer of het zojuist aangemaakte verlof wordt weergegeven.",
+          "gewenst_resultaat": "Het zojuist aangemaakte verlof wordt weergegeven."
+        },
+        {
+          "step": "8",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofkalender' en controleer of het zojuist aangemaakte verlof wordt weergegeven.",
+          "gewenst_resultaat": "Het zojuist aangemaakte verlof wordt weergegeven."
+        },
+        {
+          "step": "9",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofoverzicht' en controleer of het zojuist aangemaakte verlof wordt weergegeven.",
+          "gewenst_resultaat": "Het zojuist aangemaakte verlof wordt weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Navigeer via de hamburgermenu naar 'Ziekte en verlof' en Klik op de zojuist aangemaakte verlof",
+          "gewenst_resultaat": "De ingevulde gegevens worden weergegeven"
+        },
+        {
+          "step": "11",
+          "actie": "Klik op 'Verzoek intrekken'",
+          "gewenst_resultaat": "Je krijgt een melding rechtsonder 'Verlofaanvraag is succesvol ingetrokken' en de melding is verwijderd"
+        },
+        {
+          "step": "12",
+          "actie": "Maak een verlofverzoek aan voor een jaartal van volgend jaar of vorig jaar.",
+          "gewenst_resultaat": "Het verlofverzoek in aangemaakt"
+        },
+        {
+          "step": "13",
+          "actie": "Navigeer met de pijltjes naar het jaartal",
+          "gewenst_resultaat": "Het zojuist aangemaaakte verlofverzoek wordt weergeven"
+        }
+      ]
+    },
+    {
+      "id": "TC_12.2",
+      "title": "Verlof afkeuren (manager)",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Klik op 'Verlof en ziekte' in de navigatiebalk bovenin de pagina.",
+          "gewenst_resultaat": "De pagina 'verlof-en-ziekte/verlof-aanvragen' is geopend."
+        },
+        {
+          "step": "2",
+          "actie": "Zoek naar de medewerkernaam in de zoekbalk rechtsbovenin de pagina.",
+          "gewenst_resultaat": "De verlofverzoeken van de medewerker worden weergegeven."
+        },
+        {
+          "step": "3",
+          "actie": "Klik op het rode kruisje bij een willekeurige verzoek.",
+          "gewenst_resultaat": "De pop-up 'Verlof afkeuren' wordt weergegeven."
+        },
+        {
+          "step": "4",
+          "actie": "Klik op 'Annuleren'.",
+          "gewenst_resultaat": "De pop-up wordt afgesloten en de pagina 'Verlof-aanvragen' wordt weergegeven."
+        },
+        {
+          "step": "5",
+          "actie": "Schrijf een reden van afkeuring in de textbox en klik op de knop 'Opslaan'.",
+          "gewenst_resultaat": "Het verlof wordt niet meer weergegeven in het overzicht."
+        },
+        {
+          "step": "6",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofkalender' en controleer of het verlof niet meer wordt weergegeven in het overzicht.",
+          "gewenst_resultaat": "Het verlof wordt niet meer weergegeven in het overzicht."
+        },
+        {
+          "step": "7",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofoverzicht' en controleer of het verlof niet meer wordt weergegeven in het overzicht.",
+          "gewenst_resultaat": "Het verlof wordt niet meer weergegeven in het overzicht."
+        },
+        {
+          "step": "8",
+          "actie": "Navigeer naar de afgekeurde verzoek (binnen de pagina ziekte-en-verlof/verlofaanvragen).",
+          "gewenst_resultaat": "De afgekeurde verzoek heeft de status 'Afgekeurd'."
+        },
+        {
+          "step": "9",
+          "actie": "Klik op de afgekeurde verzoek.",
+          "gewenst_resultaat": "De informatie van het verlofverzoek wordt weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Controleer of de mailt van de afgekeurde verzoek wordt weergegeven.",
+          "gewenst_resultaat": "De mail wordt weergegeven."
+        }
+      ]
+    },
+    {
+      "id": "TC_12.3",
+      "title": "Verlof goedkeuren/bewerken",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Navigeer naar 'Verlof en ziekte' en klik op het groene vinkje van een willekeurige verzoek.",
+          "gewenst_resultaat": "De pop-up 'Verlof goedkeuren' is geopend."
+        },
+        {
+          "step": "2",
+          "actie": "Klik op 'Annuleren'.",
+          "gewenst_resultaat": "De pop-up wordt afgesloten en de pagina 'Verlof-aanvragen' wordt weergegeven."
+        },
+        {
+          "step": "3",
+          "actie": "Klik op het potloodje bij een verlof en vul de velden willekeurig in. Klik daarna op 'Bewerken'.",
+          "gewenst_resultaat": "De bewerkte gegevens worden weergegeven in het verlof."
+        },
+        {
+          "step": "4",
+          "actie": "Navigeer naar de bewerkte verzoek (binnen de pagina verlof-en-ziekte/verlofkalender).",
+          "gewenst_resultaat": "De bewerkte gegevens worden weergegeven in het verlof."
+        },
+        {
+          "step": "5",
+          "actie": "Navigeer naar 'Verlof en ziekte' en klik nogmaals op het potloodje bij een willekeurig verlof, klik daarna op 'Goedkeuren'.",
+          "gewenst_resultaat": "Het verlof is goedgekeurd en wordt niet meer weergegeven in het overzicht."
+        },
+        {
+          "step": "6",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofkalender' en controleer of het zojuist goedgekeurde verlof wordt weergegeven.",
+          "gewenst_resultaat": "Het goedgekeurde verlof wordt donkerblauw weergegeven in het overzicht."
+        },
+        {
+          "step": "7",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlofoverzicht' en controleer of het zojuist goedgekeurde verlof wordt weergegeven.",
+          "gewenst_resultaat": "Het goedgekeurde verlof wordt oranje weergegeven in het overzicht."
+        },
+        {
+          "step": "8",
+          "actie": "Navigeer naar het goedgekeurde verzoek (binnen de pagina ziekte-en-verlof/verlofaanvragen).",
+          "gewenst_resultaat": "Het verzoek heeft de status 'Goedgekeurd'."
+        },
+        {
+          "step": "9",
+          "actie": "Klik op het goedgekeurde verzoek.",
+          "gewenst_resultaat": "De gegevens van de goedgekeurde verzoek worden weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Controleer of de medewerker een mail ontvangt met daarin dat het verlofaanvraag is goedgekeurd.",
+          "gewenst_resultaat": "De medewerker ontvangt een mail met daarin een goedkeuring van verlof."
+        },
+        {
+          "step": "11",
+          "actie": "Navigeer naar 'Verlof en ziekte en klik op de blauwe tekst 'Bekijk in kalender' bij een willekeurige verzoek.",
+          "gewenst_resultaat": "De pagina 'Verlofkalender' wordt geopend."
+        },
+        {
+          "step": "12",
+          "actie": "Klik op het zojuist goedgekeurde verzoek.",
+          "gewenst_resultaat": "De pop-up 'Verlof goed- of afkeuren' wordt weergegeven."
+        },
+        {
+          "step": "13",
+          "actie": "Wijzig willekeurige velden en klik op de knop 'Bewerken'.",
+          "gewenst_resultaat": "De wijziging is uitgevoerd."
+        },
+        {
+          "step": "14",
+          "actie": "Ga naar de pagina 'plannen/beschikbaarheid' en controleer of het verlof in het overzicht wordt weergegeven.",
+          "gewenst_resultaat": "Het verlof wordt weergegeven."
+        },
+        {
+          "step": "15",
+          "actie": "Navigeer naar het gewijzigde verzoek en klik erop (binnen de pagina ziekte-en-verlof/verlofaanvragen).",
+          "gewenst_resultaat": "De goedgekeurde verzoek is juist gewijzigd."
+        }
+      ]
+    },
+    {
+      "id": "TC_12.4",
+      "title": "Nieuwe ziekmelding en bewerken",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Navigeer naar de pagina 'verlof-en-ziekte/ziekmeldingen'.",
+          "gewenst_resultaat": "De pagina ziekmeldingen wordt geopend met daarin een overzicht met alle ziekmeldingen."
+        },
+        {
+          "step": "2",
+          "actie": "Klik op de oranje knop '+ Nieuwe ziekmelding', vul de velden willekeurig in en klik op 'Opslaan'.",
+          "gewenst_resultaat": "De ziekmelding wordt opgeslagen in het overzicht en wordt weergegeven in de pagina 'Ziekmeldingen'."
+        },
+        {
+          "step": "3",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verzuimrapportage' en controleer of de ziekmelding in het overzicht wordt weergegeven.",
+          "gewenst_resultaat": "De zojuist aangemaakte ziekmelding wordt weergegeven in het overzicht."
+        },
+        {
+          "step": "4",
+          "actie": "Ga naar de pagina gebruikers/gebruikers en klik op de naam van de ziekgemelde medewerker (uit stap 11.4.2)",
+          "gewenst_resultaat": "De persoonlijke pagina van de gebruiker wordt geopend"
+        },
+        {
+          "step": "5",
+          "actie": "Klik op de tabblad 'Kalender' en controleer of de ziekmelding in het kalenderoverzicht wordt weergegeven.",
+          "gewenst_resultaat": "De ziekmelding wordt in het overzicht weergegeven."
+        },
+        {
+          "step": "6",
+          "actie": "Klik op de tabblad 'Verlof & ziekte' en controleer of de zojuist aangemaakte ziekmelding wordt weergegeven.",
+          "gewenst_resultaat": "De ziekmelding wordt juist in het overzicht weergegeven."
+        },
+        {
+          "step": "7",
+          "actie": "Er wordt een mail weergegeven voor afdelingen administratie en PZ.",
+          "gewenst_resultaat": "Een mail wordt weergegeven voor medewerkers die bij de afdelingen administratie en PZ zitten."
+        },
+        {
+          "step": "8",
+          "actie": "Navigeer via het hamburgermenu naar 'ziekte-en-verlof/ziekmeldingen''.",
+          "gewenst_resultaat": "De zojuist aangemaakte ziekmelding wordt weergegeven in het overzicht."
+        },
+        {
+          "step": "9",
+          "actie": "Wijzig de jaartallen door op de pijltjes links en rechtsboven te klikken en controleer of de ziekmeldingen in het juiste jaartal wordt weergegeven.",
+          "gewenst_resultaat": "De ziekmeldingen worden in de juiste jaartallen weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Navigeer naar de pagina 'verlof-en-ziekte/ziekmeldingen' en klik op het potloodje bij de medewerker om te bewerken.",
+          "gewenst_resultaat": "De pop-up 'Ziekmelding bewerken' wordt geopend."
+        },
+        {
+          "step": "11",
+          "actie": "Vul de waardes foutief in (Eerdere einddatum dan begindatum, zelfde datum maar eerdere eindtijd dan begintijd)",
+          "gewenst_resultaat": "Er wordt een foutmelding weergegeven en de wijzigingen kunnen niet worden opgeslagen."
+        },
+        {
+          "step": "12",
+          "actie": "Klik op de 'Annuleren'.",
+          "gewenst_resultaat": "De pop-up wordt afgesloten."
+        },
+        {
+          "step": "13",
+          "actie": "Wijzig de gegevens correct en klik op 'Opslaan'.",
+          "gewenst_resultaat": "De gewijzigde gegevens wordt in het overzicht weergegeven."
+        },
+        {
+          "step": "14",
+          "actie": "Navigeer via het hamburgermenu naar 'ziekte-en-verlof/ziekmeldingen'' en bekijk of de gewijzigde ziekmelding wordt weergegeven.",
+          "gewenst_resultaat": "De wijziging is doorgevoerd en wordt weergegeven."
+        },
+        {
+          "step": "15",
+          "actie": "Navigeer naar de pagina 'verlof-en-ziekte/ziekmeldingen' en klik op het potloodje van de zojuist geopende medewerker en klik op de knop 'Verwijderen'.",
+          "gewenst_resultaat": "De ziekmelding wordt niet meer weergegeven en is verwijderd."
+        },
+        {
+          "step": "16",
+          "actie": "Navigeer via het hamburgermenu naar 'ziekte-en-verlof/ziekmeldingen'' en bekijk of de ziekmelding is verwijderd.",
+          "gewenst_resultaat": "De ziekmelding wordt niet meer weergeven in het overzicht."
+        }
+      ]
+    },
+    {
+      "id": "TC_12.5",
+      "title": "Ziekmelding (Dienst oplossen)",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Navigeer naar de pagina 'verlof-en-ziekte/ziekmeldingen'.",
+          "gewenst_resultaat": "De pagina ziekmeldingen wordt geopend met daarin een overzicht met alle ziekmeldingen."
+        },
+        {
+          "step": "2",
+          "actie": "Klik op de rode melding bij aankomende dienst",
+          "gewenst_resultaat": "De pop-up 'Dienst oplossen' wordt weergegeven"
+        },
+        {
+          "step": "3",
+          "actie": "Vink 'Geen vervanging inplannen' aan en klik op 'Opslaan'",
+          "gewenst_resultaat": "De rode melding bij aankomende dienst wordt niet meer weergegeven bij de medewerker"
+        },
+        {
+          "step": "4",
+          "actie": "Navigeer via het hamburgermenu naar 'diensten/mijn-diensten'",
+          "gewenst_resultaat": "De dienst wordt niet meer weergegeven in de planning van de medewerker"
+        },
+        {
+          "step": "5",
+          "actie": "Voeg een vervangende medewerker toe en klik op 'Opslaan'",
+          "gewenst_resultaat": "De gebruiker waar de dienst aan was gekoppeld ziet de dienst niet meer in zijn 'diensten/mijn-diensten'"
+        },
+        {
+          "step": "6",
+          "actie": "Navigeer naar 'diensten/mijn-diensten' en controleer of de gebruiker is toegevoegd aan de dienst.",
+          "gewenst_resultaat": "De dienst wordt in het overzicht weergegeven."
+        },
+        {
+          "step": "7",
+          "actie": "Navigeer naar de pagina 'plannen/inplannen' en navigeer naar de dienst, controleer of de dienst is overgenomen door de vervangende medewerker.",
+          "gewenst_resultaat": "De vervangende medewerker wordt weergegeven in de dienst."
+        },
+        {
+          "step": "8",
+          "actie": "Ga naar de pagina 'plannen/lijst-weergave' en controleer of de vervangende medewerker de dienst overneemt van de ziekgemelde medewerker.",
+          "gewenst_resultaat": "De vervangende medewerker heeft de dienst overgenomen en deze wordt weergegeven."
+        },
+        {
+          "step": "9",
+          "actie": "Ga naar de pagina gebruikers/gebruikers en klik op de naam van de vervangende medewerker (uit stap 11.5.5)",
+          "gewenst_resultaat": "De persoonlijke pagina van de gebruiker wordt geopend"
+        },
+        {
+          "step": "10",
+          "actie": "Klik op de tabblad 'Kalender' en controleer of de overgenomen dienst in het kalenderoverzicht wordt weergegeven.",
+          "gewenst_resultaat": "De dienst wordt in het overzicht weergegeven."
+        }
+      ]
+    },
+    {
+      "id": "TC_12.6",
+      "title": "Beter melden",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/ziekmeldingen' en klik op 'Beter melden' bij een willekeurige ziekmelding.",
+          "gewenst_resultaat": "De pop-up 'Beter melden vanaf' wordt geopend."
+        },
+        {
+          "step": "2",
+          "actie": "Klik op 'annuleren'.",
+          "gewenst_resultaat": "De pop-up wordt afgesloten en de pagina 'Ziekmeldingen' wordt weergegeven."
+        },
+        {
+          "step": "3",
+          "actie": "Vul de velden willekeurig in en klik op de knop 'Opslaan'.",
+          "gewenst_resultaat": "De gebruiker is beter gemeld."
+        },
+        {
+          "step": "4",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verzuimrapportage' en controleer of de einddatum van de ziekmelding juist wordt weergegeven (einddatum is vandaag).",
+          "gewenst_resultaat": "De einddatum van de ziekmelding wordt juist weergegeven in de verzuimrapportage."
+        },
+        {
+          "step": "5",
+          "actie": "Ga naar de pagina 'plannen/lijst-weergave' en controleer of de gebruiker niet meer ziekgemeld in het overzicht wordt weergegeven.",
+          "gewenst_resultaat": "De gebruiker wordt niet meer ziekgemeld in het overzicht weergegeven."
+        },
+        {
+          "step": "6",
+          "actie": "Ga naar de pagina 'plannen/beschikbaarheid' en controleer of de gebruiker niet meet in het overzicht wordt weergegeven.",
+          "gewenst_resultaat": "De gebruiker wordt niet meer weergegeven."
+        },
+        {
+          "step": "7",
+          "actie": "Ga naar de pagina gebruikers/gebruikers en klik op de naam van de beter gemelde medewerker.",
+          "gewenst_resultaat": "De persoonlijke pagina van de gebruiker wordt geopend."
+        },
+        {
+          "step": "8",
+          "actie": "Klik op de tabblad 'Kalender' en controleer of de ziekmelding niet meer in het kalenderoverzicht wordt weergegeven.",
+          "gewenst_resultaat": "De ziekmelding wordt niet meer weergegeven."
+        },
+        {
+          "step": "9",
+          "actie": "Klik op de tabblad 'Verlof & ziekte' en controleer of de gegevens van de ziekmelding juist worden weergegeven.",
+          "gewenst_resultaat": "De gegevens worden juist weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Navigeer via het hamburgermenu naar 'ziekte-en-verlof/ziekmeldingen'' en bekijk of medewerker weer is beter gemeld",
+          "gewenst_resultaat": "De gebruiker is beter gemeld en wordt weergegeven in het overzicht"
+        }
+      ]
+    },
+    {
+      "id": "TC_12.7",
+      "title": "Filters en overige",
+      "steps": [
+        {
+          "step": "1",
+          "actie": "Navigeer naar de pagina 'ziekte-en-verlof/verlofaanvragen' en voeg een willekeurig ingevulde verlof toe door op het plusje rechtsonder in de pagina te klikken.",
+          "gewenst_resultaat": "Het verlof in aangemaakt en wordt weergegeven in het overzicht."
+        },
+        {
+          "step": "2",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verlof-aanvragen' en vink willekeurige filters aan onder het kopje 'Rol'.",
+          "gewenst_resultaat": "De aangevinkten rollen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "3",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Dienstverband'.",
+          "gewenst_resultaat": "Alleen de aangevinkte dienstverbanden worden weergegeven."
+        },
+        {
+          "step": "4",
+          "actie": "Vink het filter aan onder het kopje 'Hoofdafdeling'.",
+          "gewenst_resultaat": "Alleen de hoofdafdeling wordt weergegeven."
+        },
+        {
+          "step": "5",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Afdeling'.",
+          "gewenst_resultaat": "De aangevinkten afdelingen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "6",
+          "actie": "Ga naar de pagina 'Verlofkalender' en vink de filter 'Toon afgewezen' aan onder het kopje 'Verlofaanvragen'.",
+          "gewenst_resultaat": "De afgewezen verlof wordt weergegeven."
+        },
+        {
+          "step": "7",
+          "actie": "Vink de filters onder het kopje 'Verlof' uit.",
+          "gewenst_resultaat": "De reden en datum worden niet meer weergegeven."
+        },
+        {
+          "step": "8",
+          "actie": "Vink de filters onder het kopje 'Rol' willekeurig aan.",
+          "gewenst_resultaat": "De aangevinkten rollen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "9",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Dienstverband'.",
+          "gewenst_resultaat": "Alleen de aangevinkte dienstverbanden worden weergegeven."
+        },
+        {
+          "step": "10",
+          "actie": "Vink het filter aan onder het kopje 'Hoofdafdeling'.",
+          "gewenst_resultaat": "Alleen de hoofdafdeling wordt weergegeven."
+        },
+        {
+          "step": "11",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Afdeling'.",
+          "gewenst_resultaat": "De aangevinkten afdelingen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "12",
+          "actie": "Klik op 'Naar vandaag'.",
+          "gewenst_resultaat": "De kalender springt naar de planning van de datum van vandaag."
+        },
+        {
+          "step": "13",
+          "actie": "Klik op de datum naast 'Naar vandaag'.",
+          "gewenst_resultaat": "Er wordt een kalender weergegeven waarop je kan klikken en naar datas kan navigeren."
+        },
+        {
+          "step": "14",
+          "actie": "Wijzig de 'Weergave' filter naar 'Maand'.",
+          "gewenst_resultaat": "De kalender wordt in maandformaat weergegeven."
+        },
+        {
+          "step": "15",
+          "actie": "Wijzig de 'Weergave' filter naar 'Periode'.",
+          "gewenst_resultaat": "De kalender wordt in periodeformaat weergegeven."
+        },
+        {
+          "step": "16",
+          "actie": "Wijzig de 'Weergave' filter naar 'Aangepast'.",
+          "gewenst_resultaat": "De kalender wordt in Aangepast formaat weergegeven."
+        },
+        {
+          "step": "17",
+          "actie": "Wijzig de begindatum en einddatum door daarop te klikken (linksboven).",
+          "gewenst_resultaat": "De kalender wordt weergegeven tussen de begin en einddatum waarop is gefillterd."
+        },
+        {
+          "step": "18",
+          "actie": "Wijzig de 'Weergave' filter naar 'Week'.",
+          "gewenst_resultaat": "De kalender wordt in weekformaat weergegeven."
+        },
+        {
+          "step": "19",
+          "actie": "Ga naar de pagina 'Verlofoverzicht' en vink de filters onder het kopje 'Rol' willekeurig aan.",
+          "gewenst_resultaat": "De aangevinkte rollen worden weergeven in het overzicht"
+        },
+        {
+          "step": "20",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Dienstverband'.",
+          "gewenst_resultaat": "Alleen de aangevinkte dienstverbanden worden weergegeven."
+        },
+        {
+          "step": "21",
+          "actie": "Vink het filter aan onder het kopje 'Hoofdafdeling'.",
+          "gewenst_resultaat": "Alleen de hoofdafdeling wordt weergegeven."
+        },
+        {
+          "step": "22",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Afdeling'.",
+          "gewenst_resultaat": "De aangevinkten afdelingen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "23",
+          "actie": "Klik op de knop 'Toon legenda' onder de filters aan de linkerzijde van de pagina.",
+          "gewenst_resultaat": "De legenda wordt weergegeven (met daarin de kleuren en de namen van de kleuren)."
+        },
+        {
+          "step": "24",
+          "actie": "Klik op 'Naar vandaag'.",
+          "gewenst_resultaat": "De kalender springt naar de planning van de datum van vandaag."
+        },
+        {
+          "step": "25",
+          "actie": "Klik op de datum naast 'Naar vandaag'.",
+          "gewenst_resultaat": "Er wordt een kalender weergegeven waarop je kan klikken en naar datas kan navigeren."
+        },
+        {
+          "step": "26",
+          "actie": "Selecteer een andere datum",
+          "gewenst_resultaat": "Het verlofoverzicht wordt getoond vanaf de geselecteerde week"
+        },
+        {
+          "step": "27",
+          "actie": "Klik op 'Zoek medewerker' en vul een naam van een willekeurige medewerker in.",
+          "gewenst_resultaat": "De ingevoerde medewerker wordt weergegeven."
+        },
+        {
+          "step": "28",
+          "actie": "Klik op de oranje knop 'Exporteren'.",
+          "gewenst_resultaat": "Een venster wordt geopend om een pdf export op te slaan"
+        },
+        {
+          "step": "29",
+          "actie": "Klik op 'Opslaan'",
+          "gewenst_resultaat": "Een pdf bestand met het verlofoverzicht wordt gedownload"
+        },
+        {
+          "step": "30",
+          "actie": "Open het gedownloade bestand en controleer het",
+          "gewenst_resultaat": "Het bestand komt overeen met het ziekteverzuim overzicht"
+        },
+        {
+          "step": "31",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/ziekmeldingen' en Vink de filters onder het kopje 'Rol' willekeurig aan.",
+          "gewenst_resultaat": "De aangevinkten rollen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "32",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Dienstverband'.",
+          "gewenst_resultaat": "Alleen de aangevinkte dienstverbanden worden weergegeven."
+        },
+        {
+          "step": "33",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Afdeling'.",
+          "gewenst_resultaat": "De aangevinkten afdelingen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "34",
+          "actie": "Ga naar de pagina 'verlof-en-ziekte/verzuimrapportage' en vink onder het kopje 'Rol' willekeurige filters aan.",
+          "gewenst_resultaat": "De aangevinkten rollen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "35",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Dienstverband'.",
+          "gewenst_resultaat": "Alleen de aangevinkte dienstverbanden worden weergegeven."
+        },
+        {
+          "step": "36",
+          "actie": "Vink willekeurige filters aan onder het kopje 'Afdeling'.",
+          "gewenst_resultaat": "De aangevinkten afdelingen worden weergegeven in het overzicht"
+        },
+        {
+          "step": "37",
+          "actie": "Klik op 'Naar vandaag'.",
+          "gewenst_resultaat": "De kalender springt naar de planning van de datum van vandaag."
+        },
+        {
+          "step": "38",
+          "actie": "Klik op de datum naast 'Naar vandaag'.",
+          "gewenst_resultaat": "Er wordt een kalender weergegeven waarop je kan klikken en naar datas kan navigeren."
+        },
+        {
+          "step": "39",
+          "actie": "Wijzig de 'Weergave' filter naar 'Maand'.",
+          "gewenst_resultaat": "De kalender wordt in maandformaat weergegeven."
+        },
+        {
+          "step": "40",
+          "actie": "Wijzig de 'Weergave' filter naar 'Periode'.",
+          "gewenst_resultaat": "De kalender wordt in periodeformaat weergegeven."
+        },
+        {
+          "step": "41",
+          "actie": "Wijzig de 'Weergave' filter naar 'Aangepast'.",
+          "gewenst_resultaat": "De kalender wordt in Aangepast formaat weergegeven."
+        },
+        {
+          "step": "42",
+          "actie": "Wijzig de begindatum en einddatum door daarop te klikken (linksboven).",
+          "gewenst_resultaat": "De kalender wordt weergegeven tussen de begin en einddatum waarop is gefillterd."
+        },
+        {
+          "step": "43",
+          "actie": "Wijzig de 'Weergave' filter naar 'Week'.",
+          "gewenst_resultaat": "De kalender wordt in weekformaat weergegeven."
+        },
+        {
+          "step": "44",
+          "actie": "Klik op 'Zoek medewerker' en vul een naam van een willekeurige medewerker in.",
+          "gewenst_resultaat": "De ingevoerde medewerker wordt weergegeven."
+        },
+        {
+          "step": "45",
+          "actie": "Klik op de oranje knop 'Exporteren'.",
+          "gewenst_resultaat": "Een csv. Bestand met het ziekteverzuim wordt gedownload."
+        },
+        {
+          "step": "46",
+          "actie": "Open het gedownloade bestand en controleer het",
+          "gewenst_resultaat": "Het bestand komt overeen met het ziekteverzuim overzicht."
+        }
+      ]
+    }
+  ]
+}
+
