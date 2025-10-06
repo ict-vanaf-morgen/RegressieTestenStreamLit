@@ -3,9 +3,23 @@ import json
 import pandas as pd
 import streamlit_hotkeys as hotkeys
 
-
 st.set_page_config(layout="wide")
 
+# --- Verklein lege ruimte bovenin ---
+st.markdown(
+    """
+    <style>
+    /* Verklein de top-padding van de main content container */
+    .block-container {
+        padding-top: 1rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# --- Hotkeys activeren ---
 hotkeys.activate([
     hotkeys.hk("prev_step", "k"),
     hotkeys.hk("next_step", "j"),
@@ -16,7 +30,6 @@ hotkeys.activate([
 ])
 
 title_placeholder = st.empty()
-title_placeholder.title("📊 Regressietesten Viewer")
 
 uploaded_file = st.sidebar.file_uploader("Upload je testcase JSON-bestand", type="json")
 
@@ -36,13 +49,12 @@ with st.sidebar.expander("Sneltoetsen & Werking"):
     - <kbd>Esc</kbd> : Opmerking sluiten
     """)
 
-# Initialiseer sessiestate
+# --- Sessiestate initialiseren ---
 for key, default in [
     ("step_index", 0),
     ("statuses", {}),
     ("comments", {}),
     ("show_metadata", False),
-    ("show_comment_input", False),
 ]:
     if key not in st.session_state:
         st.session_state[key] = default
@@ -60,17 +72,23 @@ if uploaded_file:
     try:
         data = json.load(uploaded_file)
         testcase_title = data.get("metadata", {}).get("Testcase", "Onbekende Testcase")
-        title_placeholder.title(f"📊 testcase: {testcase_title}")
 
+        # --- Compacte titel ---
+        title_placeholder.markdown(
+            f"<div style='font-size:20px; font-weight:bold; color:#81a2be; margin:0 0 0px 0;'>📊 testcase: {testcase_title}</div>",
+            unsafe_allow_html=True
+        )
+
+        # Metadata sidebar
         if st.sidebar.button("Toon/verberg metadata", on_click=toggle_metadata):
             pass
-
         if st.session_state.show_metadata:
             st.sidebar.markdown("### Metadata inhoud:")
             metadata = data.get("metadata", {})
             for key, value in metadata.items():
                 st.sidebar.markdown(f"- **{key}**: {value}")
 
+        # Testcases selecteren
         testcases = data.get("testcases", [])
         testcase_ids = [tc["id"] for tc in testcases]
 
@@ -107,43 +125,28 @@ if uploaded_file:
         df["Status"] = df["step"].map(st.session_state.statuses).fillna("")
         df["Opmerking"] = df["step"].map(st.session_state.comments).fillna("")
 
-        # Hotkeys
+        # --- Hotkeys detecteren ---
         pressed_prev = hotkeys.pressed("prev_step")
         pressed_next = hotkeys.pressed("next_step")
         pressed_good = hotkeys.pressed("set_good")
         pressed_fault = hotkeys.pressed("set_fault")
-        pressed_toggle_comment = hotkeys.pressed("toggle_comment_input")
         pressed_save_comment = hotkeys.pressed("save_comment_and_exit")
 
-        if st.session_state.show_comment_input:
-            new_comment = st.text_input(
-                ":",
-                key="comment_input",
-                value=st.session_state.comments.get(df.iloc[st.session_state.step_index]["step"], ""),
-                label_visibility="collapsed",
-            )
-            if pressed_save_comment:
-                st.session_state.comments[df.iloc[st.session_state.step_index]["step"]] = new_comment
-                st.session_state.show_comment_input = False
-                st.rerun()
-        else:
-            if pressed_prev:
-                st.session_state.step_index = max(0, st.session_state.step_index - 1)
-                st.rerun()
-            if pressed_next:
-                st.session_state.step_index = min(len(df) - 1, st.session_state.step_index + 1)
-                st.rerun()
-            if pressed_good:
-                update_status(df.iloc[st.session_state.step_index]["step"], "goed✅")
-                st.rerun()
-            if pressed_fault:
-                update_status(df.iloc[st.session_state.step_index]["step"], "fout❌")
-                st.rerun()
-            if pressed_toggle_comment:
-                st.session_state.show_comment_input = True
-                st.rerun()
+        # Hotkeys acties
+        if pressed_prev:
+            st.session_state.step_index = max(0, st.session_state.step_index - 1)
+            st.rerun()
+        if pressed_next:
+            st.session_state.step_index = min(len(df) - 1, st.session_state.step_index + 1)
+            st.rerun()
+        if pressed_good:
+            update_status(df.iloc[st.session_state.step_index]["step"], "goed✅")
+            st.rerun()
+        if pressed_fault:
+            update_status(df.iloc[st.session_state.step_index]["step"], "fout❌")
+            st.rerun()
 
-        # Sliding window max 7 rijen met correcte start_idx berekening
+        # --- Sliding window max 7 rijen ---
         window_size = 7
         num_rows = len(df)
         step_num = st.session_state.step_index
@@ -160,57 +163,78 @@ if uploaded_file:
                 start_idx = step_num - half_window
         end_idx = start_idx + window_size
 
-        # ✅ FIX: reset index zodat highlight synchroon loopt
         df_window = df.iloc[start_idx:end_idx].reset_index(drop=True)
 
         def highlight_row(x):
             active_rel_idx = st.session_state.step_index - start_idx
             return [
-                'background-color: #f0c674; color: #000; font-weight: bold;'
-                if x.name == active_rel_idx else ''
+                'background-color: #f0c674; color: #000; font-weight: bold;' if x.name == active_rel_idx else ''
                 for _ in x
             ]
 
         st.dataframe(df_window.style.apply(highlight_row, axis=1), use_container_width=True)
 
-        # Knoppen en slider
-        col_buttons, col_slider = st.columns([4, 3])
+        # --- Knoppen en slider ---
+        col_buttons, col_slider = st.columns([6, 3])  # Verhoudingen naar wens
 
         with col_buttons:
-            button_cols = st.columns(6)
-            with button_cols[0]:
-                if st.button("j ⬇️", key="btn_j_down"):
-                    st.session_state.step_index = min(len(df) - 1, st.session_state.step_index + 1)
-                    st.rerun()
-            with button_cols[1]:
-                if st.button("k ⬆️", key="btn_k_up"):
-                    st.session_state.step_index = max(0, st.session_state.step_index - 1)
-                    st.rerun()
-            with button_cols[2]:
-                if st.button("g ✅", key="btn_g_good"):
-                    update_status(df.iloc[st.session_state.step_index]["step"], "goed✅")
-                    st.rerun()
-            with button_cols[3]:
-                if st.button("f ❌", key="btn_f_fault"):
-                    update_status(df.iloc[st.session_state.step_index]["step"], "fout❌")
-                    st.rerun()
-            with button_cols[4]:
-                if st.button(": 📝", key="btn_colon_comment"):
-                    st.session_state.show_comment_input = True
-                    st.rerun()
-            with button_cols[5]:
-                if st.button("Esc 🚫", key="btn_esc_cancel"):
-                    if st.session_state.show_comment_input:
-                        st.session_state.show_comment_input = False
-                        st.rerun()
+            # Maak 6 kolommen voor de buttons
+            btn_j, btn_k, btn_g, btn_f, btn_colon, btn_esc = st.columns(6)
+    
+            if btn_j.button("j ⬇️", key="btn_j_down"):
+                st.session_state.step_index = min(len(df) - 1, st.session_state.step_index + 1)
+                st.rerun()
+            if btn_k.button("k ⬆️", key="btn_k_up"):
+                st.session_state.step_index = max(0, st.session_state.step_index - 1)
+                st.rerun()
+            if btn_g.button("g ✅", key="btn_g_good"):
+                update_status(df.iloc[st.session_state.step_index]["step"], "goed✅")
+                st.rerun()
+            if btn_f.button("f ❌", key="btn_f_fault"):
+                update_status(df.iloc[st.session_state.step_index]["step"], "fout❌")
+                st.rerun()
+            if btn_colon.button(": 📝", key="btn_colon_comment"):
+                pass  # veld is permanent
+            if btn_esc.button("Esc 🚫", key="btn_esc_cancel"):
+                pressed_save_comment = True  # simuleer Escape voor opslaan
 
         with col_slider:
-            step_num_new = st.slider("Stap navigatie", 1, len(df), st.session_state.step_index + 1)
+            step_num_new = st.slider(
+                "Stap navigatie",
+                1,
+                len(df),
+                st.session_state.step_index + 1
+            )
             if step_num_new - 1 != st.session_state.step_index:
                 st.session_state.step_index = step_num_new - 1
                 st.rerun()
 
-        st.info("j/k: Vorige / Volgende stap, g/f: Status goed/fout, : voor opmerking, Esc: opslaan opmerking en stoppen met typen, knop in sidebar: Toon/verberg metadata")
+
+        # --- Permanent opmerkingenveld onderaan ---
+        st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
+        st.markdown("---")
+        st.markdown("### ✏️ Opmerking")
+
+        current_step = df.iloc[st.session_state.step_index]["step"]
+        new_comment = st.text_input(
+            "Typ hier je opmerking:",
+            key="comment_input",
+            value=st.session_state.comments.get(current_step, ""),
+            label_visibility="collapsed",
+        )
+
+        # Opslaan bij Enter of Escape
+        if new_comment != st.session_state.comments.get(current_step, "") or pressed_save_comment:
+            st.session_state.comments[current_step] = new_comment
+
+        # --- Info onderaan pagina ---
+        st.info(
+            "j/k: Vorige / Volgende stap, "
+            "g/f: Status goed/fout, "
+            ": voor opmerking, "
+            "Esc: opslaan opmerking en stoppen met typen, "
+            "knop in sidebar: Toon/verberg metadata"
+        )
 
     except json.JSONDecodeError:
         st.sidebar.error("Ongeldig JSON bestand, probeer opnieuw.")
