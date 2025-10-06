@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "Naam": "Dashboard",
+    "Datum": "8/15/2022",
+    "Pagina's": ["Dashboard"],
+    "Precondities": "Manager account, met Rechten mag ziekte/verlof inzien mag tracks aanpassen",
+    "Accounts": ["VM", "Manager", "Head manager", "HR"],
+    "Omgevingen": ["Manageromgeving"]
+  },
+  "testcases": [
+    {
+      "id": "1.1",
+      "title": "Widgets bewerken (VM)",
+      "steps": [
+        {"step": 1, "actie": "Log in als vestiging manager (VM) op de manageromgeving.", "gewenst_resultaat": "De pagina 'dashboard' wordt geopend."},
+        {"step": 2, "actie": "Klik op 'Bewerk widgets'.", "gewenst_resultaat": "De pop-up 'Bewerk widgets' wordt geopend."},
+        {"step": 3, "actie": "Klik op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten."},
+        {"step": 4, "actie": "Klik onder het kopje 'Toegevoegde widgets' op het minnetjes bij elke widget zodat er geen widgets worden weergegeven. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "Er worden geen widgets weergegeven met de melding 'Je hebt nog geen widgets'."},
+        {"step": 5, "actie": "Verwijder of voeg willekeurige widgets toe door er op te klikken. Klik vervolgens op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten en de wijzigingen worden niet doorgevoerd."},
+        {"step": 6, "actie": "Klik op de oranje tekst 'Widgets toevoegen' onder het kopje 'Je hebt nog geen widgets'.", "gewenst_resultaat": "De pop-up 'Bewerk dashboard' wordt geopend."},
+        {"step": 7, "actie": "Klik op de widget 'Aantal mogelijke conflicten door ziekte'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Mogelijke conflicten door ziekte' is toegevoegd aan het dashboard."},
+        {"step": 8, "actie": "Klik op de zojuist toegevoegde widget (mogelijke conflicten door ziekte).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'Verlof-en-ziekte/ziekmeldingen'."},
+        {"step": 9, "actie": "Klik op het huisje in de navigatiebalk.", "gewenst_resultaat": "De dashboard pagina wordt geopend."},
+        {"step": 10, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Huidige periode met aantal openstaande acties'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Huidige periode' is toegevoegd aan het dashboard."},
+        {"step": 11, "actie": "Klik op de zojuist toegevoegde widget (Huidige periode).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'."},
+        {"step": 12, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Ziekmeldingen'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Ziekmeldingen' is toegevoegd aan het dashboard."},
+        {"step": 13, "actie": "Klik op de zojuist toegevoegde widget (Ziekmeldingen).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'Verlof-en-ziekte/ziekmeldingen'."},
+        {"step": 14, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal openstaande ruilverzoeken'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Openstaande ruilverzoeken' is toegevoegd aan het dashboard."},
+        {"step": 15, "actie": "Klik op de zojuist toegevoegde widget (Openstaande ruilverzoeken).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'verlof-en-ziekte/ruilen'."},
+        {"step": 16, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal openstaande verlofaanvragen'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Openstaande verlofaanvragen' is toegevoegd aan het dashboard."},
+        {"step": 17, "actie": "Klik op de zojuist toegevoegde widget (Openstaande verlofaanvragen).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'verlof-en-ziekte/verlof-aanvragen'."},
+        {"step": 18, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal niet ingevulde ziekte-uren'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Niet ingevulde ziekte-uren' is toegevoegd aan het dashboard."},
+        {"step": 19, "actie": "Klik op de zojuist toegevoegde widget (Niet ingevulde ziekte-uren).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'."},
+        {"step": 20, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal niet ingevulde verlofuren'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Niet ingevulde verlofuren' is toegevoegd aan het dashboard."},
+        {"step": 21, "actie": "Klik op de zojuist toegevoegde widget (Niet ingevulde verlofuren).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'."},
+        {"step": 22, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal lopende tracks'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Te beoordelen tracks' is toegevoegd aan het dashboard."},
+        {"step": 23, "actie": "Klik op de zojuist toegevoegde widget (Te beoordelen tracks).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'Tracks/te-beoordelen'."},
+        {"step": 24, "actie": "Klik op 'Bewerk dashboard' en klik op de widget 'Aantal te beoordelen tracks'. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widget 'Aantal te beoordelen tracks' is toegevoegd aan het dashboard."},
+        {"step": 25, "actie": "Klik op de zojuist toegevoegde widget (Lopende tracks).", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'Tracks/lopend'."},
+        {"step": 26, "actie": "Klik op 'Bewerk dashboard' en sleep de widgets op willekeurige volgorde. Klik daarna op 'Opslaan'.", "gewenst_resultaat": "De widgets worden op de aangegeven volgorde weergegeven."}
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": "Diensten bekijken (afdelingen)",
+      "steps": [
+        {"step": 1, "actie": "Scroll naar beneden en controleer of onder het kopje 'VANDAAG' de dienst(en) worden weergegeven.", "gewenst_resultaat": "De dienst(en) worden weergegeven met werknemernaam, afdeling, werktijd en inklok status."},
+        {"step": 2, "actie": "Klik op de naam van de werknemer gekoppeld aan een dienst.", "gewenst_resultaat": "De gebruiker wordt doorgeleidt naar de pagina 'gebruikers/gebruikers/..'"},
+        {"step": 3, "actie": "Klik op de dropdownlist 'Filter op afdeling(en)' en voeg één of meerdere willekeurige afdeling(en) toe.", "gewenst_resultaat": "De dienst(en) komen overeen met de aangegeven filter."},
+        {"step": 4, "actie": "Klik nogmaals op de dropdownlist ' .. afdeling(en) geselecteerd' en controleer of geselecteerde filters grijs worden weergegeven.", "gewenst_resultaat": "De geselecteerde filters worden grijs weergegeven."},
+        {"step": 5, "actie": "Klik op het kruisje binnen de dropdownlist om de filters te verwijderen.", "gewenst_resultaat": "De filters zijn verwijderd en 'Filter op afdeling(en)' wordt binnen de dropdownlist weergegeven."}
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": "Head manager widgets",
+      "steps": [
+        {"step": 1, "actie": "Log in als head manager en klik op 'Bewerk dashboard'", "gewenst_resultaat": "De pop-up 'Bewerk dashboard' wordt geopend."},
+        {"step": 2, "actie": "Controleer of de widget: 'Aantal mogelijke conflicten door ziekte' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 3, "actie": "Controleer of de widget: 'Huidige periode met aantal openstaande acties' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 4, "actie": "Controleer of de widget: 'Ziekmeldingen' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 5, "actie": "Controleer of de widget: 'Aantal openstaande ruilverzoeken' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 6, "actie": "Controleer of de widget: 'Aantal openstaande verlofaanvragen' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 7, "actie": "Controleer of de widget: 'Aantal niet ingevulde ziekte-uren' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 8, "actie": "Controleer of de widget: 'Aantal niet ingevulde verlofuren' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 9, "actie": "Controleer of de widget: 'Aantal lopende tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 10, "actie": "Controleer of de widget: 'Aantal te beoordelen tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"}
+      ]
+    },
+    {
+      "id": "1.4",
+      "title": "HR widgets",
+      "steps": [
+        {"step": 1, "actie": "Log in als HR en klik op 'Bewerk dashboard'", "gewenst_resultaat": "De pop-up 'Bewerk dashboard' wordt geopend."},
+        {"step": 2, "actie": "Controleer of de widget: 'Aantal mogelijke conflicten door ziekte' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 3, "actie": "Controleer of de widget: 'Huidige periode met aantal openstaande acties' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 4, "actie": "Controleer of de widget: 'Ziekmeldingen' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 5, "actie": "Controleer of de widget: 'Aantal openstaande ruilverzoeken' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 6, "actie": "Controleer of de widget: 'Aantal openstaande verlofaanvragen' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 7, "actie": "Controleer of de widget: 'Aantal niet ingevulde ziekte-uren' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 8, "actie": "Controleer of de widget: 'Aantal niet ingevulde verlofuren' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 9, "actie": "Controleer of de widget: 'Aantal lopende tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 10, "actie": "Controleer of de widget: 'Aantal te beoordelen tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"}
+      ]
+    },
+    {
+      "id": "1.5",
+      "title": "Manager widgets",
+      "steps": [
+        {"step": 1, "actie": "Log in als manager en klik op 'Bewerk dashboard'.", "gewenst_resultaat": "De pop-up 'Bewerk dashboard' wordt geopend."},
+        {"step": 2, "actie": "Controleer of de widget: 'Aantal openstaande ruilverzoeken' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 3, "actie": "Controleer of de widget: 'Aantal openstaande verlofaanvragen' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 4, "actie": "Controleer of de widget: 'Aantal niet ingevulde verlofuren' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 5, "actie": "Controleer of de widget: 'Aantal lopende tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 6, "actie": "Controleer of de widget: 'Aantal te beoordelen tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"}
+      ]
+    },
+    {
+      "id": "1.6",
+      "title": "widgets",
+      "steps": [
+        {"step": 1, "actie": "Log in als manager en klik op 'Bewerk dashboard'.", "gewenst_resultaat": "De pop-up 'Bewerk dashboard' wordt geopend."},
+        {"step": 2, "actie": "Controleer of de widget: 'Aantal lopende tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"},
+        {"step": 3, "actie": "Controleer of de widget: 'Aantal te beoordelen tracks' wordt weergegeven.", "gewenst_resultaat": "De widget wordt weergegeven"}
+      ]
+    }
+  ]
+}

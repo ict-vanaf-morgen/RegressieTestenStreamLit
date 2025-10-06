@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "Naam": "Inplannen (concept)",
+    "Datum": "3/7/2022",
+    "Paginas": [
+      "Inplannen (concept)",
+      "inplannen",
+      "lijstweergave",
+      "beschikbaarheid",
+      "persoonlijke kalender",
+      "mijn diensten",
+      "conceptdienstdetail"
+    ],
+    "Precondities": "Medewerker met verlof, medewerker niet beschikbaar, medewerker met voorkeur, medewerker ziekgemeld, minimaal 1 basisrooster",
+    "Accounts": [
+      "VM/Manager",
+      "Medewerker met verlof",
+      "Ziekgemelde medewerker",
+      "Medewerker met voorkeur",
+      "Niet beschikbare medewerker"
+    ],
+    "Omgevingen": [
+      "Manageromgeving",
+      "Medewerkeromgeving"
+    ]
+  },
+  "testcases": [
+    {
+      "id": "TC_3.1",
+      "title": "Conceptdienst toevoegen",
+      "steps": [
+        { "step": 1, "actie": "Klik op de knop '+ Conceptdienst' linksboven in de pagina.", "gewenst_resultaat": "De pop-up 'Conceptdienst toevoegen' wordt geopend." },
+        { "step": 2, "actie": "Klik op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten." },
+        { "step": 3, "actie": "Vul een willekeurige 'Afdeling', 'starttijd' + 'eindtijd', 'Personen' in en een datum van vorige week en klik op 'Opslaan'.", "gewenst_resultaat": "Het aangemaakte concept wordt niet weergegeven in het concept kalenderoverzicht." },
+        { "step": 4, "actie": "Vul een willekeurige 'Afdeling', 'starttijd' + 'eindtijd', 'Personen' in en een datum van vandaag of later.", "gewenst_resultaat": "Het aangemaakte concept wordt weergegeven in het concept kalenderoverzicht." },
+        { "step": 5, "actie": "Klik op het '+' symbool in het kalenderoverzicht bij een willekeurige datum om een conceptdienst toe te voegen.", "gewenst_resultaat": "De pop-up 'Conceptdienst' wordt geopend." },
+        { "step": 6, "actie": "Sla de gegevens op", "gewenst_resultaat": "De conceptdienst wordt weergegeven in de het concept kalenderoverzicht." },
+        { "step": 7, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en vervolgens op de tab 'Concept'.", "gewenst_resultaat": "Concept lijstweergave wordt geopend." },
+        { "step": 8, "actie": "Klik op de een datum van een conceptdienst in de lijstweergave (Bij een gebruiker met dezelfde afdeling als de conceptdienst).", "gewenst_resultaat": "De dienst wordt in het concept lijstweergave weergegeven." },
+        { "step": 9, "actie": "Klik op een willekeurige datum binnen de kalenderoverzicht op het kalendersymbool (basisrooster invoegen).", "gewenst_resultaat": "De pop-up 'Basisrooster invoegen' wordt weergegeven" },
+        { "step": 10, "actie": "Klik op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten." },
+        { "step": 11, "actie": "Kies een basisrooster uit en voer een einddatum die eerder is dan de begindatum.", "gewenst_resultaat": "Er wordt een foutmelding weergeven." },
+        { "step": 12, "actie": "Voer een einddatum in die later is dan de begindatum en klik op 'Diensten toevoegen'.", "gewenst_resultaat": "De basisrooster wordt in het kalenderoverzicht weergeven bij de aangegeven datum." }
+      ]
+    },
+    {
+      "id": "TC_3.2",
+      "title": "Medewerker toevoegen (concept)",
+      "steps": [
+        { "step": 1, "actie": "Klik op een aangemaakte conceptdienst in de kalender.", "gewenst_resultaat": "De pagina 'Conceptdienst bewerken' wordt geopend." },
+        { "step": 2, "actie": "Voeg een medewerker toe zonder status aan de conceptdienst en klik op de knop 'Opslaan concept'.", "gewenst_resultaat": "De medewerker wordt toegevoegd aan de conceptdienst." },
+        { "step": 3, "actie": "Klik op de oranje knop '+ Conceptdienst' en vul dezelfde tijd en datum in als een bestaande dienst in de gepubliceerde (inplannen) pagina.", "gewenst_resultaat": "De dienst wordt aangemaakt en weergeven in het kalenderoverzicht." },
+        { "step": 4, "actie": "Voeg (als nodig) dezelfde medewerker toe aan de zojuist aangemaakte dienst (in concept) als in de gepubliceerde dienst. De twee diensten dienen te overlappen.", "gewenst_resultaat": "De dienst is aangemaakt en wordt weergegeven in concept weergave." },
+        { "step": 5, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en vervolgens op de tab 'Concept'. Controleer of de diensten aan medewerkers worden gekoppeld in het overzicht", "gewenst_resultaat": "De dienst is gekoppeld aan de medewerker en wordt weergegeven in het overzicht." },
+        { "step": 6, "actie": "Controleer of de uren ook worden meegenomen waarmee de werknemer ingeplaned is (Dit zij je bij contract uren)", "gewenst_resultaat": "Uren passen zich aan als een medewerker wordt ingeplaned" },
+        { "step": 7, "actie": "Ga terug naar de pagina 'Inplannen' concept.", "gewenst_resultaat": "De pagina Inplannen concept wordt geopend." },
+        { "step": 8, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina.", "gewenst_resultaat": "De pop-up 'Diensten publiceren' wordt geopend." },
+        { "step": 9, "actie": "Klik op de 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten." },
+        { "step": 10, "actie": "Voeg de afdeling(en) toe van de aangemaakte diensten. Vul daarna het begin en einddatum in. Klik daarna op 'Publiceren'", "gewenst_resultaat": "Er wordt een foutmelding weergegeven voor de dienst die overlapt (uit 2.2.4)." },
+        { "step": 11, "actie": "Klik op 'Gepubliceerd' en controleer of de diensten en gegevens correct overeenkomen in het kalenderoverzicht (gepubliceerd).", "gewenst_resultaat": "De gegevens worden correct weergeven in het gepubliceerd overzicht." },
+        { "step": 12, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gepubliceerde diensten aan medewerkers worden weergegeven in de lijst (medewerker zonder status).", "gewenst_resultaat": "De gegevens worden correct weergeven in het lijstoverzicht." },
+        { "step": 13, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 14, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven." },
+        { "step": 15, "actie": "Klik op de gebruiker die zojuist is ingepland en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_3.3",
+      "title": "Medewerker met verlof (concept)",
+      "steps": [
+        { "step": 1, "actie": "Klik op een dienst, voeg een medewerker toe met verlof en klik op de knop 'Opslaan concept'.", "gewenst_resultaat": "De naam van de medewerker wordt in de dienstbewerkpagina weergegeven met de melding 'Verlof'. En in de dienstkalender met een kalender symbool. Als er over heen wordt gehovered wordt de melding 'Verlof op ,,' weergegeven." },
+        { "step": 2, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina en voeg de afdeling toe van de dienst waaraan de medewerker met verlof aan is toegevoegd.", "gewenst_resultaat": "De knop 'dienst(en) publiceren' wordt oranje." },
+        { "step": 3, "actie": "Klik op de knop 'dienst(en) publiceren'", "gewenst_resultaat": "De dienst wordt van concept naar gepubliceerd gewijzigd." },
+        { "step": 4, "actie": "Klik op 'Gepubliceerd' om in de pagina 'plannen/inplannen' te komen en controleer of de dienst juist is gepubliceerd", "gewenst_resultaat": "De ongepubliceerde dienst is terecht gekomen in de gepubliceerde diensten zonder medewerker met verlof" }
+      ]
+    },
+    {
+      "id": "TC_3.4",
+      "title": "Ziekgemelde medewerker (concept)",
+      "steps": [
+        { "step": 1, "actie": "Klik op een dienst, voeg een medewerker toe die zich ziek heeft gemeld en klik op de knop 'Opslaan concept'.", "gewenst_resultaat": "De naam van de medewerker wordt in de dienstbewerkpagina weergegeven met de melding 'Ziekgemeld'. En in de dienstkalender met een kalender symbool. Als er over heen wordt gehovered wordt de melding 'Ziekgemeld vanaf ,,' weergegeven." },
+        { "step": 2, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina en voeg de afdeling toe van de dienst waaraan de medewerker die ziek is aan is toegevoegd.", "gewenst_resultaat": "De knop 'dienst(en) publiceren' wordt oranje." },
+        { "step": 3, "actie": "Klik op de knop 'dienst(en) publiceren'", "gewenst_resultaat": "De dienst wordt van concept naar gepubliceerd gewijzigd." },
+        { "step": 4, "actie": "Klik op 'Gepubliceerd' om in de pagina 'plannen/inplannen' te komen en controleer of de dienst juist is gepubliceerd", "gewenst_resultaat": "De ongepubliceerde dienst is terecht gekomen in de gepubliceerde kalenderoverzicht." },
+        { "step": 5, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 6, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gepubliceerde dienst aan medewerkers wordt weergegeven in de lijst (medewerker ziekgemeld).", "gewenst_resultaat": "De medewerker die zich ziek heeft gemeld is gekoppeld aan de dienst en wordt weergegeven in het overzicht." },
+        { "step": 7, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 8, "actie": "Klik op de gebruiker die zojuist is ingepland en zich ziekgemeld heeft en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_3.5",
+      "title": "Medewerker met voorkeur (concept)",
+      "steps": [
+        { "step": 1, "actie": "Klik op een dienst, voeg een medewerker met een voorkeur en klik op de knop 'Opslaan concept'.", "gewenst_resultaat": "De naam van de medewerker wordt in de pagina 'Conceptdienst bewerken' weergegeven met de melding 'Voorkeur'." },
+        { "step": 2, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina en voeg de afdeling toe van de dienst waaraan de medewerker die ziek is aan is toegevoegd.", "gewenst_resultaat": "De knop 'dienst(en) publiceren' wordt oranje." },
+        { "step": 3, "actie": "Klik op de knop 'dienst(en) publiceren'", "gewenst_resultaat": "De dienst wordt van concept naar gepubliceerd gewijzigd." },
+        { "step": 4, "actie": "Klik op 'Gepubliceerd' om in de pagina 'plannen/inplannen' te komen en controleer of de dienst juist is gepubliceerd", "gewenst_resultaat": "De ongepubliceerde dienst is terecht gekomen in de gepubliceerde kalenderoverzicht." },
+        { "step": 5, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 6, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gepubliceerde dienst aan medewerkers wordt weergegeven in de lijst (medewerker met voorkeur).", "gewenst_resultaat": "De medewerker met voorkeur is gekoppeld aan de dienst en wordt weergegeven in het overzicht." },
+        { "step": 7, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 8, "actie": "Klik op de gebruiker die zojuist is ingepland en een voorkeur heeft en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_3.6",
+      "title": "Medewerker niet beschikbaar (concept)",
+      "steps": [
+        { "step": 1, "actie": "Zoek een medewerker die niet beschikbaar is en voeg hem toe.", "gewenst_resultaat": "Er wordt een melding weergeven dat de medewerker niet beschikbaar is bij zijn naam." },
+        { "step": 2, "actie": "Klik op 'Opslaan concept'.", "gewenst_resultaat": "Je wordt teruggeleid naar het kalenderoverzicht en de dienst wordt weergeven met een kalendersymbool met daarin een uitroepteken. Als er overheen wordt gehovered wordt de melding weergeven: 'Niet beschikbaar: Opmerking'." },
+        { "step": 3, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina en voeg de afdeling toe van de dienst waaraan de medewerker die ziek is aan is toegevoegd.", "gewenst_resultaat": "De knop 'dienst(en) publiceren' wordt oranje." },
+        { "step": 4, "actie": "Klik op de knop 'dienst(en) publiceren'", "gewenst_resultaat": "De dienst wordt van concept naar gepubliceerd gewijzigd." },
+        { "step": 5, "actie": "Klik op 'Gepubliceerd' om in de pagina 'plannen/inplannen' te komen en controleer of de dienst juist is gepubliceerd", "gewenst_resultaat": "De ongepubliceerde dienst is terecht gekomen in de gepubliceerde kalenderoverzicht." },
+        { "step": 6, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 7, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gepubliceerde dienst aan medewerkers wordt weergegeven in de lijst (medewerker niet beschikbaar).", "gewenst_resultaat": "De medewerker met voorkeur is gekoppeld aan de dienst en wordt weergegeven in het overzicht." },
+        { "step": 8, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 9, "actie": "Klik op de gebruiker die zojuist is ingepland en niet beschikbaar is. Klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_3.7",
+      "title": "Medewerkers bewerken (concept)",
+      "steps": [
+        { "step": 1, "actie": "Klik op de conceptdienst (uit de preconditie) en klik op het potloodje bij één van toegevoegde de medewerkers.", "gewenst_resultaat": "De pop-up 'Dienst bewerken' wordt geopend." },
+        { "step": 2, "actie": "Wijzig de starttijd en eindtijd, vul daarna een opmerking in. Klik tot slot op 'Opslaan'.", "gewenst_resultaat": "De tijden en opmerking worden weergeven bij de naam van de medewerker." },
+        { "step": 3, "actie": "Voeg een markering toe bij de medewerker door op het bolletje te klikken voor de naam van de medewerker, kies vervolgens een kleur. Klik tot slot op 'Opslaan en daarna op 'Opslaan concept''.", "gewenst_resultaat": "De medewerker wordt in de dienst weergegeven met de aangegeven kleurmarkering en een opmerkingsymbool." },
+        { "step": 4, "actie": "Open de zojuist gewijzigde dienst en verwijder de medewerker waar geen wijzigingen aan zijn gebracht. Klik vervolgens op 'Opslaan concept'.", "gewenst_resultaat": "De medewerker wordt niet meer weergeven in de dienst." },
+        { "step": 5, "actie": "Klik op de oranje knop 'Publiceren' rechts boven in de pagina en voeg de afdeling toe van de dienst waaraan de medewerker die ziek is aan is toegevoegd.", "gewenst_resultaat": "De knop 'dienst(en) publiceren' wordt oranje." },
+        { "step": 6, "actie": "Klik op de knop 'dienst(en) publiceren'", "gewenst_resultaat": "De dienst wordt van concept naar gepubliceerd gewijzigd." },
+        { "step": 7, "actie": "Klik op 'Gepubliceerd' om in de pagina 'plannen/inplannen' te komen en controleer of de dienst juist is gepubliceerd", "gewenst_resultaat": "De ongepubliceerde dienst is terecht gekomen in de gepubliceerde kalenderoverzicht." },
+        { "step": 8, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de zojuist gewijzigde dienst juist is gewijzigd.", "gewenst_resultaat": "De dienst wordt juist weergeven in het overzicht." },
+        { "step": 9, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gewijzigde dienst aan medewerkers juist wordt weergegeven in de lijst.", "gewenst_resultaat": "De dienst wordt is juist gewijzigd weergeven bij de medewerkers." },
+        { "step": 10, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 11, "actie": "Klik op de gebruiker die zojuist is ingepland en klik vervolgens op 'Kalender'. Controleer of de gegevens juist zijn gewijzigd.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_3.9",
+      "title": "Conceptdienst informatie wijzigen",
+      "steps": [
+        { "step": 1, "actie": "Klik op een conceptdienst en wijzig de werktijd (starttijd eindtijd) en klik op 'Opslaan concept'.", "gewenst_resultaat": "De tijden worden gewijzigd weergeven in het (concept) kalenderoverzicht." },
+        { "step": 2, "actie": "Klik op een conceptdienst en wijzig het aantal personen, begindatum en klik op 'Opslaan concept'.", "gewenst_resultaat": "De gewijzigde gegevens worden weergeven in het (concept) kalenderoverzicht." },
+        { "step": 3, "actie": "Vink de checkbox 'Medewerkers notificeren' over deze publicatie aan en vul een titel met daaronder een bericht in. Klik Daarna op 'Dienst(en)' publiceren.", "gewenst_resultaat": "De dienst is gepubliceerd in de pagina 'Gepubliceerd' (inplannen). En de notificatie is naar de medewerkersaccount verzonden." },
+        { "step": 4, "actie": "Controleer of de gewijzigde diensten en gegevens correct overeenkomen in het kalenderoverzicht (gepubliceerd).", "gewenst_resultaat": "De gewijzigde gegevens worden weergeven in het (concept) kalenderoverzicht." },
+        { "step": 5, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gewijzigde gepubliceerde diensten aan medewerkers worden weergegeven in de lijst (afwijkende tijden, andere werktijden, aant pers., begindatum).", "gewenst_resultaat": "De gewijzigde gegevens worden correct in het lijstoverzicht weergeven." },
+        { "step": 6, "actie": "Klik op 'Gebruikers' in de navigatiebalk, klik vervolgens op de gewijzigde gebruiker en klik tot slot op 'Kalender'. Controleer of de wijzigingen die zijn gemaakt zijn doorgevoerd (afwijkende tijden, andere werktijden, aant pers., begindatum).", "gewenst_resultaat": "De gegevens worden juist weergeven in de persoonlijke kalender." },
+        { "step": 7, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergeven in het overzicht." },
+        { "step": 8, "actie": "Controleer of de notificatie is ontvangen die in stap 3.9.3 is gemaakt.", "gewenst_resultaat": "De medewerker ontvangt een notificatie met daarin het zojuist ingevoerde titel en het bericht." },
+        { "step": 9, "actie": "Maak een conceptdienst aan, klik daarop en klik vervolgens op 'Dienst verwijderen'.", "gewenst_resultaat": "De dienst is verwijderd en wordt niet meer weergeven." }
+      ]
+    },
+    {
+      "id": "TC_3.10",
+      "title": "Overige kalenderfuncties en filteropties",
+      "steps": [
+        { "step": 1, "actie": "Kopieer een dienst met minimaal 1 medewerker door hem te slepen naar een andere dag in de kalender.", "gewenst_resultaat": "De pop-up 'Dienst kopiëren' wordt geopend" },
+        { "step": 2, "actie": "Klik op 'kopiëren' (laat het vinkje aan staan op de medewerkers mee te kopiëren).", "gewenst_resultaat": "De dienst is gekopieerd naar de aangegeven dag in de kalender met de medewerkers." },
+        { "step": 3, "actie": "Kopieer een dienst naar een willekeurige dag in de kalender (door hem te slepen) en zet in de pop-up het vinkje uit om geen medewerkers mee te nemen in je kopie.", "gewenst_resultaat": "De dienst is gekopieerd zonder medewerkers." },
+        { "step": 4, "actie": "Vink de filter: 'Toon medewerkers' uit.", "gewenst_resultaat": "De namen van de medewerkers worden niet weergeven in de diensten." },
+        { "step": 5, "actie": "Vink de filter: 'Toon medewerkers' aan.", "gewenst_resultaat": "De namen van de medewerkers worden weergeven in de diensten." },
+        { "step": 6, "actie": "Vink de filter: 'Toon diensten met verlofaanvragen' aan.", "gewenst_resultaat": "Diensten met verlofaanvragen worden weergegeven." },
+        { "step": 7, "actie": "Vink de filter: 'Toon alleen diensten met zieken' aan.", "gewenst_resultaat": "Alleen diensten met zieken worden weergegeven." },
+        { "step": 8, "actie": "Vink de filter onder dienstverband:'Toon/verberg type dienstverband' aan.", "gewenst_resultaat": "De dienstverbanden worden weergegeven door het V of A symbool." },
+        { "step": 9, "actie": "Vink onder 'Afdeling' willekeurige filters aan.", "gewenst_resultaat": "Er worden alleen diensten weergegeven met de aangevinkte afdelingfilters." },
+        { "step": 10, "actie": "Klik op de oranje knop 'Filters resetten'.", "gewenst_resultaat": "Alle filters worden gereset, alleen de filter 'Toon medewerkers' staat aan." },
+        { "step": 11, "actie": "Klik op de knop 'Toon legenda' onder de filters aan de linkerzijde van de pagina.", "gewenst_resultaat": "De legenda wordt weergegeven (met daarin de kleuren en de namen van de kleuren)." },
+        { "step": 12, "actie": "Klik op 'Naar vandaag'.", "gewenst_resultaat": "De kalender springt naar de planning van de datum van vandaag." },
+        { "step": 13, "actie": "Klik op de datum naast 'Naar vandaag'.", "gewenst_resultaat": "Er wordt een kalender weergegeven waarop je kan klikken en naar data kan navigeren." },
+        { "step": 14, "actie": "Wijzig de 'Weergave' filter naar 'Maand'.", "gewenst_resultaat": "De kalender wordt in maandformaat weergegeven." },
+        { "step": 15, "actie": "Wijzig de 'Weergave' filter naar 'Periode'.", "gewenst_resultaat": "De kalender wordt in periodeformaat weergegeven." },
+        { "step": 16, "actie": "Wijzig de 'Weergave' filter naar 'Aangepast'.", "gewenst_resultaat": "De kalender wordt in Aangepast formaat weergegeven." },
+        { "step": 17, "actie": "Wijzig de begindatum en einddatum door daarop te klikken (linksboven).", "gewenst_resultaat": "De kalender wordt weergegeven tussen de begin en einddatum waarop is gefilterd." },
+        { "step": 18, "actie": "Wijzig de 'Weergave' filter naar 'Week'.", "gewenst_resultaat": "De kalender wordt in weekformaat weergegeven." },
+        { "step": 19, "actie": "Sleep een conceptdienst in de kalender binnen dezelfde dag.", "gewenst_resultaat": "De conceptdienst wordt oranje gemarkeerd." },
+        { "step": 20, "actie": "Klik op de oranje prullebak rechts
+

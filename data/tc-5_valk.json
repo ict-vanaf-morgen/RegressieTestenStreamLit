@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "Testcase": "5-Wijkindeling",
+    "Datum": "8/23/2024",
+    "Paginas": ["Plannen", "Instellingen"],
+    "Precondities": "Medewerker met aantal afdelingen en rechten om wijkindelingen en groepen aan te maken. Aantal diensten voor vandaag aangemaakt met daarbij ingeplande werknemers",
+    "Accounts": ["Manager", "Vestma"],
+"Omgevingen": ["Manageromgeving", "Medewerkeromgeving"]
+},
+"testcases": [
+  {
+    "id": "TC_5.1",
+      "title": "Wijkindeling toevoegen, verwijderen, wijzigen",
+      "steps": [
+        {"step": 1, "actie": "Klik op 'Instellingen' en vervolgens op 'Wijkindelingen'", "gewenst_resultaat": "De pagina 'Wijkindelingen' wordt geopend"},
+        {"step": 2, "actie": "Klik op de knop '+ Nieuwe wijkindeling'", "gewenst_resultaat": "De pop-up 'Nieuwe wijkindeling' wordt geopend"},
+        {"step": 3, "actie": "Klik op 'Annuleren'", "gewenst_resultaat": "De pop-up wordt afgesloten"},
+        {"step": 4, "actie": "Vul een naam in en klik op 'Opslaan'", "gewenst_resultaat": "De nieuwe wijkindeling wordt aangemaakt en in het overzicht weergegeven"},
+        {"step": 5, "actie": "Klik op het prullebak symbool om de zojuist aangemaakte wijkindeling te verwijderen", "gewenst_resultaat": "De pop-up 'Wijkindeling verwijderen' wordt geopend"},
+        {"step": 6, "actie": "Klik op 'Annuleren'", "gewenst_resultaat": "De pop-up wordt afgesloten"},
+        {"step": 7, "actie": "Klik op 'Verwijderen'", "gewenst_resultaat": "De wijkindeling is verwijderd en wordt niet meer in het overzicht weergegeven"},
+        {"step": 8, "actie": "Klik op het potloodje om de naam te wijzigen", "gewenst_resultaat": "De pop-up 'Wijkindeling bewerken' wordt geopend"},
+        {"step": 9, "actie": "Klik op 'Annuleren'", "gewenst_resultaat": "De pop-up wordt afgesloten"},
+        {"step": 10, "actie": "Maak het veld leeg en klik op 'Bewerken'", "gewenst_resultaat": "De knop 'Bewerken' is grijs en kan niet op worden geklikt"},
+        {"step": 11, "actie": "Vul een willekeurige naam in en klik op 'Bewerken'", "gewenst_resultaat": "De naam van de wijkindeling is gewijzigd en wordt in het overzicht weergegeven"}
+      ]
+    },
+    {
+      "id": "TC_5.2",
+      "title": "Nieuwe groep",
+      "steps": [
+        {"step": 1, "actie": "Klik op de zojuist aangemaakte wijkindeling in het overzicht", "gewenst_resultaat": "De optie om een groep toe te voegen wordt weergegeven"},
+        {"step": 2, "actie": "Vul onder het label 'Naam groep' een willekeurige naam in van de groep", "gewenst_resultaat": "De knop 'Opslaan' wordt oranje"},
+        {"step": 3, "actie": "Klik op de knop '+ Nieuwe groep' rechts boven in de pagina", "gewenst_resultaat": "De pop-up 'Nieuwe groep' wordt geopend"},
+        {"step": 4, "actie": "Klik op 'Annuleren'", "gewenst_resultaat": "De pop-up wordt afgesloten"},
+        {"step": 5, "actie": "Klik op de knop 'Groep toevoegen' in het midden van de pagina en klik op 'Wijk toevoegen'", "gewenst_resultaat": "De labels 'Wijknaam' en 'Aantal medewerkers' worden weergegeven"},
+        {"step": 6, "actie": "Vul een willekeurige Wijknaam en Aantal medewerkers in. Klik vervolgens op '+ Wijk invoegen'", "gewenst_resultaat": "De wijknaam en aantal medewerkers worden toegevoegd"},
+        {"step": 7, "actie": "Klik nogmaals op 'Wijk invoegen' en vervolgens op het prullebak symbool. Klik daarna op 'Opslaan'", "gewenst_resultaat": "De groep wordt toegevoegd en wordt juist weergegeven in het overzicht"},
+        {"step": 8, "actie": "Navigeer terug naar 'Wijkindelingen' in de navigatiebalk", "gewenst_resultaat": "De aangemaakte wijkindeling wordt juist weergegeven in het overzicht"}
+      ]
+    },
+    {
+      "id": "TC_5.3",
+      "title": "Datum selectie",
+      "steps": [
+        {"step": 1, "actie": "Klik op Plannen Dan naar Wijkindeling", "gewenst_resultaat": "De wijkindeling pagina opent nu"},
+        {"step": 2, "actie": "Klik op het linker pijltje links bovenin naast de datum", "gewenst_resultaat": "Je gaat nu een dag terug op de wijkindeling pagina"},
+        {"step": 3, "actie": "Klik op het rechter pijltje links boven naast de datum", "gewenst_resultaat": "Je gaat nu een dag vooruit op de wijkindeling pagina"},
+        {"step": 4, "actie": "Klik op 'Naar vandaag'", "gewenst_resultaat": "De datum van vandaag wordt geopend"}
+      ]
+    },
+    {
+      "id": "TC_5.4",
+      "title": "Toevoegen / verwijderen wijkindeling",
+      "steps": [
+        {"step": 1, "actie": "Controleer of je op de datum van vandaag zit en of er een aantal diensten zijn ingepland voor vandaag met medewerkers daar op", "gewenst_resultaat": ""},
+        {"step": 2, "actie": "Selecteer nu onder 'Kies een wijkindeling' een optie", "gewenst_resultaat": "Er opent een slider en er kan een template worden toegevoegd die nu wordt ingeladen als deze geselecteerd wordt"},
+        {"step": 3, "actie": "Controleer of de juiste wijkindeling wordt ingeladen en of er meerdere tabs en wijkindelingen zichtbaar zijn", "gewenst_resultaat": "Er kunnen meerdere tabs worden geopend in de template en meerdere wijkindelingen worden weergegeven"},
+        {"step": 4, "actie": "Klik op 'Terug'", "gewenst_resultaat": "De wijkindeling wordt gesloten en er kan opnieuw een wijkindeling geselecteerd worden"},
+        {"step": 5, "actie": "Selecteer nu een andere wijkindeling onder 'Wijkindeling kiezen'", "gewenst_resultaat": "De andere wijkindeling wordt geopend"},
+        {"step": 6, "actie": "Klik nu op verwijder wijkindeling", "gewenst_resultaat": "Wijkindeling wordt verwijderd en er kan een nieuwe indeling worden gekozen"},
+        {"step": 7, "actie": "Selecteer nu weer een wijkindeling", "gewenst_resultaat": "Wijkindeling wordt ingeladen"}
+      ]
+    },
+    {
+      "id": "TC_5.5",
+      "title": "Toevoegen/verwijderen medewerkers",
+      "steps": [
+        {"step": 1, "actie": "Pak een medewerker en sleep deze in een van de diensten in de wijkindelingen", "gewenst_resultaat": "Bij het slepen worden de vakken in de wijkindeling groen en zijn duidelijk aangegeven dat ze daar in gepland kunnen worden."},
+        {"step": 2, "actie": "Pak nogmaals een medewerker en sleep deze in een wijkindeling", "gewenst_resultaat": "De ingeplande medewerker wordt nu groen (Dit laat zien dat hij/zij ingepland is)"},
+        {"step": 3, "actie": "Pak dezelfde medewerker en plan deze in op een andere dag in dezelfde TAB", "gewenst_resultaat": "Dit zou mogelijk moeten zijn en medewerker zou wel groen moeten blijven."},
+        {"step": 4, "actie": "Pak nogmaals dezelfde medewerker en plan deze in op een andere dienst in een andere Tab", "gewenst_resultaat": "Medewerker zou nog in alle diensten ingepland moeten blijven."},
+        {"step": 5, "actie": "Verwijder nu alle ingeplande medewerkers", "gewenst_resultaat": "Medewerkers worden verwijderd en er kan opnieuw op die wijkindelingsplek worden ingepland."},
+        {"step": 6, "actie": "Klik op het filter 'Alle afdelingen geselecteerd'", "gewenst_resultaat": "Het filter opent en afdelingen openen die gekoppeld zijn aan de gebruiker"},
+        {"step": 7, "actie": "Klik weer op het filter en selecteer nu een afdeling", "gewenst_resultaat": "De lijst met medewerkers update nu en je krijgt nu medewerkers te zien die ingepland zijn voor vandaag voor die afdeling"}
+      ]
+    },
+    {
+      "id": "TC_5.6",
+      "title": "Toevoegen/bewerken Opmerking Controle afwijkende diensttijd",
+      "steps": [
+        {"step": 1, "actie": "Zorg dat je een medewerker hebt die voorzien is van een opmerking (Dit kun je doen door op de dag van vandaag een medewerker te voorzien van een opmerking bij de inplannen pagina en dan op een dienst een opmerking toe te voegen)", "gewenst_resultaat": "Controle Stap"},
+        {"step": 2, "actie": "Plan nu een medewerker in die voorzien is van een opmerking", "gewenst_resultaat": "De opmerking wordt weergegeven van de medewerker, dit test je door over het ballonetje te gaan met je muis"},
+        {"step": 3, "actie": "Klik nu op het ballonetje en voeg een opmerking toe", "gewenst_resultaat": "De opmerking wordt toegevoegd en wordt opgeslagen, dit controleer je door weer over het ballonetje te gaan met je muis"},
+        {"step": 4, "actie": "Voeg nu een medewerker toe die niet voorzien is van een opmerking", "gewenst_resultaat": "Je ziet nu een ballonetje met een plusje achter de medewerker"},
+        {"step": 5, "actie": "Klik nu op dat ballonetje met het plusje en voeg een opmerking toe", "gewenst_resultaat": "De opmerking wordt opgeslagen en weergegeven"},
+        {"step": 6, "actie": "Plan een werknemer in met een afwijkende diensttijd (Die zou ook weergegeven moeten worden op zijn afwijkende diensttijd). De medewerker geef je een afwijkende diensttijd in de inplan pagina voor een dienst", "gewenst_resultaat": "De werknemer wordt onder werknemers weergegeven op zijn afwijkende diensttijd. Ook als deze ingepland wordt zie je alleen de afwijkende diensttijd"}
+      ]
+    },
+    {
+      "id": "TC_5.7",
+      "title": "Opmerking toevoegen 'Algemene opmerking'",
+      "steps": [
+        {"step": 1, "actie": "Scroll naar beneden en klik op 'Algemene opmerking'. Voeg nu een opmerking toe aan de dienst en sla dit op (Dit doe je door naar boven te scrollen en te klikken op wijkindeling opslaan.)", "gewenst_resultaat": "De opmerking wordt opgeslagen en weergegeven"},
+        {"step": 2, "actie": "Pas nu de opmerking aan en sla weer op", "gewenst_resultaat": "De opmerking wordt bewerkt en weergegeven"},
+        {"step": 3, "actie": "Verwijder nu de opmerking en sla op", "gewenst_resultaat": "Er wordt nu geen opmerking meer weergegeven."}
+      ]
+    },
+    {
+      "id": "TC_5.8",
+      "title": "Exporteren wijkindeling",
+      "steps": [
+        {"step": 1, "actie": "Vul nu een wijkindeling met medewerkers zonder opmerkingen doe dit op verschillende tabs en exporteer deze dan.", "gewenst_resultaat": "Er wordt een printpagina geopend en je kunt dit nu opslaan als PDF. Controleer of alle werknemers worden meegenomen en op de juiste wijken en tabs zijn ingepland. Note: Er wordt geen algemene opmerking getoond omdat deze niet is ingevuld."},
+        {"step": 2, "actie": "Voeg nu opmerkingen toe aan de werknemers en een algemene opmerking en exporteer deze", "gewenst_resultaat": "Je ziet nu dat er op de export ook opmerkingen zijn toegevoegd en een algemene opmerking"}
+      ]
+    }
+  ]
+}

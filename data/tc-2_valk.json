@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "Naam": "Inplannen (gepubliceerd)",
+    "Datum": "8/23/2024",
+    "Paginas": [
+      "Inplannen (gepubliceerd)",
+      "lijstweergave",
+      "beschikbaarheid",
+      "persoonlijke kalender",
+      "mijn diensten",
+      "dienstdetail"
+    ],
+    "Precondities": "Medewerker met verlof, medewerker niet beschikbaar, medewerker met voorkeur, medewerker ziekgemeld",
+    "Accounts": [
+      "Manager",
+      "Stagiair",
+      "Full time medewerker",
+      "Parttime medewerker",
+      "Niet beschikbare",
+      "Uitzendkracht"
+    ],
+    "Omgevingen": [
+      "Manageromgeving",
+      "medewerkeromgeving"
+    ]
+  },
+  "testcases": [
+    {
+      "id": "TC_2.1",
+      "title": "Dienst toevoegen",
+      "steps": [
+        { "step": 1, "actie": "Log in op de manageromgeving", "gewenst_resultaat": "De pagina dashboard wordt weergeven." },
+        { "step": 2, "actie": "Klik op de knop '+ Dienst toevoegen' links boven.", "gewenst_resultaat": "De pop-up 'Dienst toevoegen' wordt weergegeven en de datum van de huidige dag is ingevuld." },
+        { "step": 3, "actie": "Vul een willekeurige afdeling, een datum in het verleden, een eindtijd in en een aantal personen (meer dan 0). Klik vervolgens op de kop 'Opslaan'.", "gewenst_resultaat": "De dienst met de ingevulde data is aangemaakt en wordt grijs weergeven in de kalender." },
+        { "step": 4, "actie": "Vul een willekeurige afdeling, een datum in de toekomst, starttijd en endtijd in en een aantal personen (meer dan 0). Klik vervolgens op de knop 'Opslaan'.", "gewenst_resultaat": "De dienst met de ingevulde data is aangemaakt en wordt groen weergeven in de kalender." },
+        { "step": 5, "actie": "Klik op het plusje in het kalenderoverzicht om een dienst aan te maken en vul de velden willekeurig in.", "gewenst_resultaat": "De dienst met de ingevulde data is aangemaakt en wordt in de kalender weergeven." }
+      ]
+    },
+    {
+      "id": "TC_2.2",
+      "title": "Medewerkers en uitzendkracht toevoegen",
+      "steps": [
+        { "step": 1, "actie": "Klik op een zojuist aangemaakte dienst, voeg een stagiair (medewerker) toe zonder status (geen verlof, ziekgemelde, met voorkeur, niet beschikbaar) en klik op de knop 'Opslaan'.", "gewenst_resultaat": "De naam van de medewerker wordt met een A weergegeven in de dienstbewerkpagina. In de dienstkalender wordt de naam weergeven (zonder symbolen)" },
+        { "step": 2, "actie": "Open een dienst, klik op de knop '+ Uitzendkracht toevoegen' en vul een naam in.", "gewenst_resultaat": "De naam wordt toegevoegd en de U symbool wordt bij de naam weergegeven (Uitzendkracht)." },
+        { "step": 3, "actie": "Klik op 'Opslaan' en controleer in het overzicht of de uitzendkracht is toegevoegd.", "gewenst_resultaat": "De naam van de uitzendkracht wordt weergeven in de dienst." },
+        { "step": 4, "actie": "Klik op een dienst en voeg de hoeveelheid medewerkers toe dat in de dienst wordt weergegeven. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "De dienst veranderd van lichtgroen naar donkergroen" },
+        { "step": 5, "actie": "Klik op de dienst van 2.2.5 en voeg extra medewerker(s) toe aan de dienst. Klik vervolgens op 'Opslaan'.", "gewenst_resultaat": "De hoeveelheid medewerkers die zijn toegevoegd wordt in het kalenderoverzicht weergegeven en blijft donkergroen." },
+        { "step": 6, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 7, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gekoppelde diensten aan medewerkers worden weergegeven in de lijst.", "gewenst_resultaat": "De diensten die zijn aangemaakt zijn juist gekoppeld aan de medewerkers en de status van de medewerkers zijn in de lijst weergegeven." },
+        { "step": 8, "actie": "Klik op 'Gebruikers' in de navigatiebalk.", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 9, "actie": "Klik op een gebruiker die zojuist is ingepland en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_2.3",
+      "title": "Medewerker met verlof",
+      "steps": [
+        { "step": 1, "actie": "Klik op een zojuist aangemaakte dienst, voeg een fulltime medewerker toe met verlof en klik op de knop 'Opslaan'.", "gewenst_resultaat": "De naam van de medewerker wordt met een V weergegeven in de dienstbewerkpagina en in de dienstkalender met een kalendersymbool. Als er over heen wordt gehovered wordt de melding 'Verlof op ,,' weergegeven." },
+        { "step": 2, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 3, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gekoppelde dienst aan medewerker wordt weergegeven (medewerker met verlof).", "gewenst_resultaat": "De medewerker met verlof is gekoppeld aan de dienst en wordt weergegeven in het overzicht" },
+        { "step": 4, "actie": "Klik op concept (lijstweergave) en controleer of de medewerker met verlof wordt weergegeven.", "gewenst_resultaat": "Het verlof is gekoppeld aan de medewerker en wordt weergegeven." },
+        { "step": 5, "actie": "Klik op 'Beschikbaarheid' in de navigatiebalk en controleer of de status van de medewerker klopt in het overzicht (Medewerker met verlof)", "gewenst_resultaat": "De status van de medewerker met verlof wordt weergeven in het beschikbaarheidsoverzicht" },
+        { "step": 6, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 7, "actie": "Klik op de gebruiker die zojuist is ingepland en verlof heeft en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_2.4",
+      "title": "Ziekgemelde medewerker",
+      "steps": [
+        { "step": 1, "actie": "Klik op een zojuist aangemaakte dienst, voeg een parttime medewerker toe die ziek is gemeld en klik op de knop 'Opslaan'.", "gewenst_resultaat": "De naam van de medewerker wordt weergegeven in de dienstkalender met een Tasje. Als er over heen wordt gehovered wordt de melding 'Ziekgemeld vanaf ,,' weergegeven." },
+        { "step": 2, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de ziekgemelde medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 3, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gekoppelde dienst aan medewerker wordt weergegeven (ziekgemelde medewerker).", "gewenst_resultaat": "De ziekgemelde medewerker is gekoppeld aan de dienst en wordt weergegeven in het overzicht" },
+        { "step": 4, "actie": "Klik op concept (lijstweergave) en controleer of de ziekgemelde wordt weergegeven.", "gewenst_resultaat": "De ziekmelding is aan de gebruiker gekoppeld en wordt weergegeven in het overzicht." },
+        { "step": 5, "actie": "Klik op 'Beschikbaarheid' in de navigatiebalk en controleer of de status van de medewerker klopt in het overzicht (Ziekgemelde medewerker)", "gewenst_resultaat": "De status van de medewerker ziek is gemeld wordt weergeven in het beschikbaarheidsoverzicht" },
+        { "step": 6, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 7, "actie": "Klik op de gebruiker die zojuist is ingepland en is ziekgemeld en klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." }
+      ]
+    },
+    {
+      "id": "TC_2.5",
+      "title": "Medewerker met voorkeur",
+      "steps": [
+        { "step": 1, "actie": "Klik op een zojuist aangemaakte dienst, voeg een medewerker met voorkeur toe", "gewenst_resultaat": "Er wordt een groene melding in de dienstbewerkpagina weergegeven met de groene melding 'Voorkeur'" },
+        { "step": 2, "actie": "Klik op 'Opslaan' en controleer in het overzicht of de medewerker met voorkeur is toegevoegd.", "gewenst_resultaat": "De medewerker met voorkeur wordt weergeven in de dienst." },
+        { "step": 3, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker met voorkeur is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 4, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gekoppelde dienst aan medewerker wordt weergegeven (medewerker met voorkeur).", "gewenst_resultaat": "De medewerker met voorkeur is gekoppeld aan de dienst en wordt weergegeven in het overzicht" },
+        { "step": 5, "actie": "Klik op concept (lijstweergave) en controleer of de medewerker met voorkeur wordt weergegeven.", "gewenst_resultaat": "De voorkeur is gekoppeld aan de gebruiker en wordt weergegeven in het overzicht." },
+        { "step": 6, "actie": "Klik op 'Beschikbaarheid' in de navigatiebalk en controleer of de status van de medewerker klopt in het overzicht (medewerker met voorkeur)", "gewenst_resultaat": "De status van de medewerker met voorkeur wordt weergeven in het beschikbaarheidsoverzicht" },
+        { "step": 7, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 8, "actie": "Klik op de gebruiker die zojuist is ingepland en een voorkeur heeft. Klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De medewerker met voorkeur zijn dienst wordt weergeven in de kalender." }
+      ]
+    },
+    {
+      "id": "TC_2.6",
+      "title": "Medewerkers niet beschikbaar",
+      "steps": [
+        { "step": 1, "actie": "Zoek een medewerker die niet beschikbaar is en voeg hem toe.", "gewenst_resultaat": "Er wordt een melding weergeven dat de medewerker niet beschikbaar is bij zijn naam." },
+        { "step": 2, "actie": "Klik op 'Opslaan'", "gewenst_resultaat": "Je wordt teruggeleid naar het kalenderoverzicht en de dienst wordt weergeven met een kalendersymbool met daarin een uitroepteken. Als er overheen wordt gehovered wordt de melding weergeven: 'Niet beschikbaar: Opmerking'." },
+        { "step": 3, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de medewerker is aangemeld aan de dienst.", "gewenst_resultaat": "De dienst wordt weergegeven in het overzicht." },
+        { "step": 4, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist gepubliceerde dienst aan medewerkers wordt weergegeven in de lijst (medewerker niet beschikbaar).", "gewenst_resultaat": "De medewerker die 'Niet beschikbaar' is gekoppeld aan de dienst en wordt weergegeven in het overzicht." },
+        { "step": 5, "actie": "Klik op concept (lijstweergave) en controleer of de medewerker niet beschikbaar wordt weergegeven.", "gewenst_resultaat": "De niet beschikbaarheid is gekoppeld aan de medewerker en wordt weergegeven in het overzicht." },
+        { "step": 6, "actie": "Klik op 'Gebruikers' in de navigatiebalk,", "gewenst_resultaat": "Een overzicht van alle gebruikers worden weergegeven" },
+        { "step": 7, "actie": "Klik op de gebruiker die zojuist is ingepland en niet beschikbaar is. Klik vervolgens op 'Kalender'. Controleer of de gegevens kloppen.", "gewenst_resultaat": "De gegevens in de kalender komen overeen met de ingevulde gegevens en kloppen." },
+        { "step": 8, "actie": "Ga naar de pagina 'Beschikbaarheid'. Navigeer naar de gebruiker die niet beschikbaar is en controleer of de status juist is.", "gewenst_resultaat": "De niet beschikbaarheidsstatus wordt juist in het overzicht weergegeven." }
+      ]
+    },
+    {
+      "id": "TC_2.7",
+      "title": "Medewerkers en uitzendkracht bewerken",
+      "steps": [
+        { "step": 1, "actie": "Klik op het kleine cirkeltje naast de toegevoegde medewerker (links) en klik op een willekeurige kleur.", "gewenst_resultaat": "Het cirkeltje is gemarkeerd met de uitgekozen kleur" },
+        { "step": 2, "actie": "Klik op het potloodje naast het prullebakje bij de medewerker, wijzig de starttijd eindtijd en vul een opmerking in en klik op de knop 'Opslaan'", "gewenst_resultaat": "Een starttijd, eindtijd en een opmerking zijn toegevoegd aan de medewerker." },
+        { "step": 3, "actie": "Klik nogmaals op 'Opslaan' om de wijzigingen op te slaan.", "gewenst_resultaat": "De wijzigingen zijn doorgevoerd. De medewerker heeft een kleurmarkering bij zijn naam, zijn zojuist aangegeven werktijden worden weergegeven naast zijn naam en er is een opmerkingsymbool naast zijn naam." },
+        { "step": 4, "actie": "Volg stappen 2.7.1 t/m 2.7.3 voor een uitzendkracht.", "gewenst_resultaat": "De wijzigingen zijn doorgevoerd. De medewerker heeft een kleurmarkering bij zijn naam, zijn zojuist aangegeven werktijden worden weergegeven naast zijn naam en er is een opmerkingsymbool naast zijn naam." },
+        { "step": 5, "actie": "Klik op een dienst en vervolgens op de knop 'Annuleren'.", "gewenst_resultaat": "Je wordt teruggeleid naar de pagina 'Inplannen'" },
+        { "step": 6, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de wijzigingen zijn doorgevoerd.", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd." },
+        { "step": 7, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist wijzigingen zijn doorgevoerd (kleurmarkering, opmerking, afwijkende tijden).", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd." },
+        { "step": 8, "actie": "Klik op 'Gebruikers' in de navigatiebalk, klik vervolgens op de gewijzigde gebruiker en klik tot slot op 'Kalender'. Controleer of de wijzigingen die zijn gemaakt zijn doorgevoerd (kleurmarkering, afwijkende tijden).", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd." },
+        { "step": 9, "actie": "Ga naar de pagina 'Inplannen' open daarin een dienst en klik op het prullebakje onder medewerkers om een medewerker te verwijderen uit de dienst. Klik tot slot op de knop 'Opslaan'.", "gewenst_resultaat": "De medewerker is uit de dienst verwijderd." },
+        { "step": 10, "actie": "Volg stap 3.5 maar voor een uitzendkracht (klik op het prullebakje onder medewerkers bij een uitzendkracht).", "gewenst_resultaat": "De uitzendkracht is uit de dienst verwijderd." }
+      ]
+    },
+    {
+      "id": "TC_2.8",
+      "title": "Dienstinformatie wijzigen",
+      "steps": [
+        { "step": 1, "actie": "Wijzig de starttijd en eindtijd. Klik vervolgens op de knop 'Opslaan'.", "gewenst_resultaat": "De wijzigingen zijn opgeslagen weergegeven in de kalenderoverzicht (starttijd, eindtijd)." },
+        { "step": 2, "actie": "Wijzig het aantal personen naar een willekeurig aantal en klik op 'Opslaan'.", "gewenst_resultaat": "De wijzigingen zijn opgeslagen weergegeven in de kalenderoverzicht (aantal pers.)." },
+        { "step": 3, "actie": "Open de gewijzigde dienst en klik op dienstlog (kloksymbool naast informatie).", "gewenst_resultaat": "De dienstlog pop-up wordt geopend." },
+        { "step": 4, "actie": "Klik op 'Meer tonen' en controleer of de wijzigingen die zijn gemaakt kloppen.", "gewenst_resultaat": "De wijzigingen die zijn gemaakt komen overeen met de informatie in de dienstlog." },
+        { "step": 5, "actie": "Klik op 'Sluiten' rechtsboven in de pop-up.", "gewenst_resultaat": "De pop-up wordt afgesloten." },
+        { "step": 6, "actie": "Klik op de knop 'Opslaan reeks' rechtsboven.", "gewenst_resultaat": "De pop-up 'Je past een reeks van diensten aan' wordt geopend." },
+        { "step": 7, "actie": "Controleer of de dienstinformatie dezelfde dienstafdeling heeft van de dienst en klik op 'Annuleren'.", "gewenst_resultaat": "De afdeling komt overeen met de afdeling van de dienst en de pop-up wordt afgesloten." },
+        { "step": 8, "actie": "Klik op de knop 'Toepassen' en controleer of dezelfde diensten voor de volgende weken op dezelfde datums zijn.", "gewenst_resultaat": "De diensten zijn hetzelfde en de datums van de diensten vallen op dezelfde dagen." },
+        { "step": 9, "actie": "Navigeer naar 'Diensten/mijn-diensten' via het hamburgermenu rechtsboven en controleer of de wijzigingen van de dienst zijn doorgevoerd.", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd." },
+        { "step": 10, "actie": "Klik op 'Lijstweergave' in de navigatiebalk en controleer of de zojuist wijzigingen zijn doorgevoerd (starttijd eindtijd, aantal pers. en reeks opgeslagen).", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd." },
+        { "step": 11, "actie": "Klik op 'Gebruikers' in de navigatiebalk, klik vervolgens op de gewijzigde gebruiker en klik tot slot op 'Kalender'. Controleer of de wijzigingen die zijn gemaakt zijn doorgevoerd (starttijd eindtijd, aantal pers. en reeks opgeslagen).", "gewenst_resultaat": "De wijzigingen zijn correct doorgevoerd (er is een juiste starttijd eindtijd, aantal pers. en reeks is opgeslagen)." },
+        { "step": 12, "actie": "Klik op 'Dienst verwijderen' onder het kopje informatie.", "gewenst_resultaat": "De pop-up 'Dienst verwijderen' wordt weergegeven." },
+        { "step": 13, "actie": "Klik op 'Annuleren'.", "gewenst_resultaat": "De pop-up wordt afgesloten." },
+        { "step": 14, "actie": "Klik op 'Verwijderen'.", "gewenst_resultaat": "De dienst is verwijderd en niet meer te zien in het kalenderoverzicht." }
+      ]
+    },
+    {
+      "id": "TC_2.9",
+      "title": "Overige kalenderfuncties en filteropties",
+      "steps": [
+        { "step": 1, "actie": "Kopieer een dienst met minimaal 1 medewerker door hem te slepen naar een andere dag in de kalender.", "gewenst_resultaat": "De pop-up 'Dienst kopiëren' wordt geopend" },
+        { "step": 2, "actie": "Klik op 'kopiëren' (laat het vinkje aan staan op de medewerkers mee te kopiëren).", "gewenst_resultaat": "De dienst is gekopieerd naar de aangegeven dag in de kalender met de medewerkers." },
+        { "step": 3, "actie": "Kopieer een dienst naar een willekeurige dag in de kalender (door hem te slepen) en zet in de pop-up het vinkje uit om geen medewerkers mee te nemen in je kopie.", "gewenst_resultaat": "De dienst is gekopieerd zonder medewerkers." },
+        { "step": 4, "actie": "Kopieer een dienst met een medewerker naar een dag en tijdstip waarin hij al is ingepland (Ze moeten overlappen).", "gewenst_resultaat": "Er wordt een foutmelding weergegeven." },
+        { "step": 5, "actie": "Kopieer een dienst met een medewerker naar een dag in het verleden (b.v. Vorige dag).", "gewenst_resultaat": "Er gebeurt niets, de dienst wordt niet gekopieerd" },
+        { "step": 6, "actie": "Klik op 'Zoek medewerker' rechtsboven in de pagina, voer een naam van een medewerker.", "gewenst_resultaat": "Diensten waarin de naam van de medewerker in bevinden worden weergegeven in het overzicht." },
+        { "step": 7, "actie": "Vink de filter: 'Toon medewerkers' uit.", "gewenst_resultaat": "De namen van de medewerkers worden niet weergeven in de diensten." },
+        { "step": 8, "actie": "Vink de filter: 'Toon medewerkers' aan.", "gewenst_resultaat": "De namen van de medewerkers worden weergeven in de diensten." },
+        { "step": 9, "actie": "Vink de filter: 'Toon diensten met verlofaanvragen' aan.", "gewenst_resultaat": "Diensten met verlofaanvragen worden weergegeven." },
+        { "step": 10, "actie": "Vink de filter: 'Toon alleen diensten met zieken' aan.", "gewenst_resultaat": "Alleen diensten met zieken worden weergegeven." },
+        { "step": 11, "actie": "Vink de filter onder dienstverband:'Toon/verberg type dienstverband' aan.", "gewenst_resultaat": "De dienstverbanden worden weergegeven door het V of A symbool." },
+        { "step": 12, "actie": "Vink onder 'Afdeling' willekeurige filters aan.", "gewenst_resultaat": "Er worden alleen diensten weergegeven met de aangevinkte afdelingfilters." },
+        { "step": 13, "actie": "Klik op de oranje knop 'Filters resetten'.", "gewenst_resultaat": "Alle filters worden gereset, alleen de filter 'Toon medewerkers' staat aan." },
+        { "step": 14, "actie": "Klik op de knop 'Toon legenda' onder de filters aan de linkerzijde van de pagina.", "gewenst_resultaat": "De legenda wordt weergegeven (met daarin de kleuren en de namen van de kleuren)." },
+        { "step": 15, "actie": "Klik op 'Naar vandaag'.", "gewenst_resultaat": "De kalender springt naar de planning van de datum van vandaag." },
+        { "step": 16, "actie": "Klik op de datum naast 'Naar vandaag'.", "gewenst_resultaat": "Er wordt een kalender weergegeven waarop je kan klikken en naar datas kan navigeren." },
+        { "step": 17, "actie": "Wijzig de 'Weergave' filter naar 'Maand'.", "gewenst_resultaat": "De kalender wordt in maandformaat weergegeven." },
+        { "step": 18, "actie": "Wijzig de 'Weergave' filter naar 'Periode'.", "gewenst_resultaat": "De kalender wordt in periodeformaat weergegeven." },
+        { "step": 19, "actie": "Wijzig de 'Weergave' filter naar 'Aangepast'.", "gewenst_resultaat": "De kalender wordt in Aangepast formaat weergegeven." },
+        { "step": 20, "actie": "Wijzig de begindatum en einddatum door daarop te klikken (linksboven).", "gewenst_resultaat": "De kalender wordt weergegeven tussen de begin en einddatum waarop is gefilterd." },
+        { "step": 21, "actie": "Wijzig de 'Weergave' filter naar 'Week'.", "gewenst_resultaat": "De kalender wordt in weekformaat weergegeven." },
+        { "step": 22, "actie": "Klik op de oranje knop 'Exporteren'.", "gewenst_resultaat": "De kalender wordt geëxporteerd naar een csv. Bestand." },
+        { "step": 23, "actie": "Open het geëxporteerde csv. Bestand.", "gewenst_resultaat": "De gegevens van de kalender zijn in het csv. bestand vastgelegd." }
+      ]
+    },
+    {
+      "id": "TC_2.10",
+      "title": "Exporteren naar agenda",
+      "steps": [
+        { "step": 1, "actie": "Open de employee app en log in als de ingeplande medewerker", "gewenst_resultaat": "De app wordt geopend en de medewerker is ingelogd" },
+        { "step": 2, "actie": "Klik op het hamburgermenu en navigeer naar de pagina 'Diensten/Mijn diensten'", "gewenst_resultaat": "De pagina 'Mijn diensten' wordt geopend met de dienstplanning van de medewerker" },
+        { "step": 3, "actie": "Klik linksboven in de app op het kalender-icoontje", "gewenst_resultaat": "Het .ics-bestand wordt gedownload" },
+        { "step": 4, "actie": "Open het gedownloade .ics-bestand (sommige browsers doen dit automatisch)", "gewenst_resultaat": "Een popup wordt getoond met de keuze om de gedownloade planning in de kalender app toe te voegen" },
+        { "step": 5, "actie": "Controleer of de agenda-items in de popup overeenkomen met de dienstplanning, inclusief afwijkende diensttijden", "gewenst_resultaat": "De titels en tijden van de aangeboden agenda-items komen overeen met de dienstplanning" },
+        { "step": 6, "actie": "Kies in de popup de optie om de agenda-items aan je standaard agenda app toe te voegen", "gewenst_resultaat": "De popup wordt gesloten en de agenda-items worden geïmporteerd" },
+        { "step": 7, "actie": "Open de betreffende agenda app en controleer of de nieuwe agenda-items overeenkomen met de dienstplanning", "gewenst_resultaat": "De titels en tijden van de nieuwe agenda-items komen overeen met de dienstplanning" }
+      ]
+    }
+  ]
+}

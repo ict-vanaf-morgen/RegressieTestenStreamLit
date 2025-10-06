@@ -1,0 +1,27 @@
+﻿,step,actie,gewenst_resultaat,Status,Opmerking
+0,1,Log in als vestiging manager (VM) op de manageromgeving.,De pagina 'dashboard' wordt geopend.,goed✅,
+1,2,Klik op 'Bewerk widgets'.,De pop-up 'Bewerk widgets' wordt geopend.,goed✅,opmerking
+2,3,Klik op 'Annuleren'.,De pop-up wordt afgesloten.,fout❌,
+3,4,Klik onder het kopje 'Toegevoegde widgets' op het minnetjes bij elke widget zodat er geen widgets worden weergegeven. Klik vervolgens op 'Opslaan'.,Er worden geen widgets weergegeven met de melding 'Je hebt nog geen widgets'.,goed✅,
+4,5,Verwijder of voeg willekeurige widgets toe door er op te klikken. Klik vervolgens op 'Annuleren'.,De pop-up wordt afgesloten en de wijzigingen worden niet doorgevoerd.,fout❌,
+5,6,Klik op de oranje tekst 'Widgets toevoegen' onder het kopje 'Je hebt nog geen widgets'.,De pop-up 'Bewerk dashboard' wordt geopend.,fout❌,
+6,7,Klik op de widget 'Aantal mogelijke conflicten door ziekte'. Klik daarna op 'Opslaan'.,De widget 'Mogelijke conflicten door ziekte' is toegevoegd aan het dashboard.,fout❌,
+7,8,Klik op de zojuist toegevoegde widget (mogelijke conflicten door ziekte).,De gebruiker wordt doorgeleidt naar de pagina 'Verlof-en-ziekte/ziekmeldingen'.,goed✅,
+8,9,Klik op het huisje in de navigatiebalk.,De dashboard pagina wordt geopend.,fout❌,
+9,10,Klik op 'Bewerk dashboard' en klik op de widget 'Huidige periode met aantal openstaande acties'. Klik daarna op 'Opslaan'.,De widget 'Huidige periode' is toegevoegd aan het dashboard.,goed✅,
+10,11,Klik op de zojuist toegevoegde widget (Huidige periode).,De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'.,goed✅,opmerking goed
+11,12,Klik op 'Bewerk dashboard' en klik op de widget 'Ziekmeldingen'. Klik daarna op 'Opslaan'.,De widget 'Ziekmeldingen' is toegevoegd aan het dashboard.,fout❌,
+12,13,Klik op de zojuist toegevoegde widget (Ziekmeldingen).,De gebruiker wordt doorgeleidt naar de pagina 'Verlof-en-ziekte/ziekmeldingen'.,fout❌,
+13,14,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal openstaande ruilverzoeken'. Klik daarna op 'Opslaan'.,De widget 'Openstaande ruilverzoeken' is toegevoegd aan het dashboard.,fout❌,
+14,15,Klik op de zojuist toegevoegde widget (Openstaande ruilverzoeken).,De gebruiker wordt doorgeleidt naar de pagina 'verlof-en-ziekte/ruilen'.,fout❌,
+15,16,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal openstaande verlofaanvragen'. Klik daarna op 'Opslaan'.,De widget 'Openstaande verlofaanvragen' is toegevoegd aan het dashboard.,goed✅,
+16,17,Klik op de zojuist toegevoegde widget (Openstaande verlofaanvragen).,De gebruiker wordt doorgeleidt naar de pagina 'verlof-en-ziekte/verlof-aanvragen'.,fout❌,
+17,18,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal niet ingevulde ziekte-uren'. Klik daarna op 'Opslaan'.,De widget 'Niet ingevulde ziekte-uren' is toegevoegd aan het dashboard.,goed✅,
+18,19,Klik op de zojuist toegevoegde widget (Niet ingevulde ziekte-uren).,De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'.,fout❌,
+19,20,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal niet ingevulde verlofuren'. Klik daarna op 'Opslaan'.,De widget 'Niet ingevulde verlofuren' is toegevoegd aan het dashboard.,fout❌,
+20,21,Klik op de zojuist toegevoegde widget (Niet ingevulde verlofuren).,De gebruiker wordt doorgeleidt naar de pagina 'PZ/periodes-afronden/..'.,goed✅,
+21,22,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal lopende tracks'. Klik daarna op 'Opslaan'.,De widget 'Te beoordelen tracks' is toegevoegd aan het dashboard.,fout❌,
+22,23,Klik op de zojuist toegevoegde widget (Te beoordelen tracks).,De gebruiker wordt doorgeleidt naar de pagina 'Tracks/te-beoordelen'.,goed✅,
+23,24,Klik op 'Bewerk dashboard' en klik op de widget 'Aantal te beoordelen tracks'. Klik daarna op 'Opslaan'.,De widget 'Aantal te beoordelen tracks' is toegevoegd aan het dashboard.,fout❌,opmerking v
+24,25,Klik op de zojuist toegevoegde widget (Lopende tracks).,De gebruiker wordt doorgeleidt naar de pagina 'Tracks/lopend'.,goed✅,
+25,26,Klik op 'Bewerk dashboard' en sleep de widgets op willekeurige volgorde. Klik daarna op 'Opslaan'.,De widgets worden op de aangegeven volgorde weergegeven.,goed✅,
